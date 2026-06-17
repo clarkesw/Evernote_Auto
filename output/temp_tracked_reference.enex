@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<en-export export-date="20260617T145537Z" application="Evernote" version="10.120.3">
+  <note>
+    <title>Classes</title>
+    <note-attributes>
+      <source>desktop.win</source>
+      <source-application>evernote.win32</source-application>
+    </note-attributes>
+    <content>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;&lt;!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"&gt;
+&lt;en-note&gt;&lt;div&gt;EVERNOTE_TEXT_BLOCK_PLACEHOLDER_1&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;a href="https://www.evernote.com/shard/s341/nl/54341568/b64f6a38-f99b-2352-573d-ebf344b4a38d" rel="noopener noreferrer" rev="en_rl_none"&gt;Signature&lt;/a&gt;&lt;/b&gt;:&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;a href="https://www.evernote.com/shard/s341/nl/54341568/735d575d-b686-462d-de04-90be61b48fe7" rev="en_rl_none"&gt;Components&lt;/a&gt;&lt;/b&gt;:&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;div&gt;EVERNOTE_TEXT_BLOCK_PLACEHOLDER_2&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;EVERNOTE_TEXT_BLOCK_PLACEHOLDER_3&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;EVERNOTE_TEXT_BLOCK_PLACEHOLDER_4&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;EVERNOTE_TEXT_BLOCK_PLACEHOLDER_5&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;EVERNOTE_TEXT_BLOCK_PLACEHOLDER_6&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/en-note&gt;</content>
+  </note>
+</en-export>

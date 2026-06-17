@@ -1,0 +1,78 @@
+```import os
+import json
+import google.generativeai as genai
+
+# Configure your API token
+# Best practice is to set an environment variable named GEMINI_API_KEY
+API_KEY = os.environ.get("GEMINI_API_KEY", "YOUR_ACTUAL_TOKEN_HERE")
+genai.configure(api_key=API_KEY)
+
+def load_input_data(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def save_output_data(file_path, data):
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2)
+
+def main():
+    input_file = "ai_input.json"
+    output_file = "ai_output.json"
+    
+    if not os.path.exists(input_file):
+        print(f"Error: {input_file} not found.")
+        return
+
+    # Load your source text blocks
+    payload_data = load_input_data(input_file)
+
+    # Define your exact structural rules prompt
+    system_instruction = (
+        "You are a precise content transformation engine. Your sole task is to process the attached data, "
+        "update only the human-readable English text according to strict layout preservation constraints, "
+        "and return the updated structures mapped directly inside a standard JSON code block.\n\n"
+        "### CRITICAL RULES FOR STRUCTURAL LAYOUT COMPLIANCE:\n"
+        "1. Maintain the exact 'text_block_X' key mappings provided in the input data.\n"
+        "2. TOPIC ANCHORING: You must not change the core subject matter of a text block. For example, if a block describes 'JavaServer Pages (JSP)', the entire rewritten paragraph must focus exclusively on JSP architecture and mechanics; do not substitute or overwrite it with details about 'Java Persistence API (JPA)' or any other technology.\n"
+        "3. INLINE HTML MARGINS AND ATTRIBUTES: You must leave all inline tags intact. When a keyword is wrapped inside a code element like <code class=\"qwLsO O_pm7\" spellcheck=\"false\">@Target</code>, you must preserve the tag exactly along with its parameters (class=\"qwLsO O_pm7\" spellcheck=\"false\"). Do not strip these attributes, do not drop the code wrapper, and do not remove the @ symbol or any other prefix.\n"
+        "4. COLON AND TERM SEPARATION: Maintain terms and definitions intact. The term name, structural tags, and trailing colons (e.g., Servlet:, JavaServer Pages (JSP):) must not be split up, omitted, or divorced from their associated definitions. Where a block contains a keyword link or term followed by a colon (:), the rewritten definition must consist of exactly one sentence following the term.\n"
+        "5. Only replace pure text content segments. Do not alter JSON structural wrappers or keys.\n"
+        "6. Maintain all non-English text sections exactly as they are. Only process and rewrite English text segments.\n"
+        "7. The output must contain only the raw JSON mapping wrapped in a standard markdown code block so it displays correctly. Do not insert any introductory commentary, summary notes, or meta-discourse.\n\n"
+        "### CONTENT & STYLE REWRITE INSTRUCTIONS:\n"
+        "Apply the following strict content constraints to every paragraph/text segment you rewrite from the attachment:\n"
+        "- Check the original text for technical correctness, add any missing core points, and rewrite the information completely into a clean paragraph format.\n"
+        "- Integrate all new or expanded technical details natively as if they were part of the original context.\n"
+        "- DO NOT use introductory phrases, meta-discourse, or transitional expressions to declare added information (e.g., do not use 'One missing point is...', 'In addition...', etc.).\n"
+        "- Provide a technical overview tailored to a developer audience. Prioritize functional clarity and practical mechanics over academic jargon. Maintain a professional, highly readable tone focusing on system flow over minute implementation code details.\n"
+        "- Case Constraints: Immediately following a colon (:) or a hyphen (-), the first word of the continuing text or definition must start with a lowercase letter.\n"
+        "- Sentence Length Limit: Every single sentence in your rewritten text must contain between 11 and 17 words.\n"
+        "- Character Formatting & Monospace Rules: Do not use any special text formatting characters. Do not use LaTeX markers like \"$\\text{\" or \"}$\". Formatting for technical keywords must be kept inside the provided <code class=\"...\"> HTML elements explicitly present in the extraction data.\n"
+        "- Java Methods: Do not translate abstract patterns into non-existent Java syntax (e.g., a 'round robin' pattern should be written as plain text 'round robin', not 'roundRobin()'). Only format concepts as Java methods if they are explicitly known standard APIs or methods from the text.\n"
+        "- Spacing: After every single sentence, use exactly two white spaces before starting the next sentence. Do not use a tab."
+    )
+
+    # Initialize Gemini model configuration
+    # Note: Using response_mime_type forces the model to return valid raw JSON
+    model = genai.GenerativeModel(
+        model_name="gemini-1.5-flash",
+        generation_config={"response_mime_type": "application/json"}
+    )
+
+    # Combine the system prompt framework and the user content payload
+    full_prompt = f"{system_instruction}\n\n### INPUT DATA:\n{json.dumps(payload_data)}"
+
+    print("Sending text data to Gemini API...")
+    try:
+        response = model.generate_content(full_prompt)
+        
+        # Parse output response back to structured JSON data
+        output_json = json.loads(response.text)
+        save_output_data(output_file, output_json)
+        print(f"Success! System data updated and stored inside: {output_file}")
+        
+    except Exception as e:
+        print(f"Error communicating with Gemini engine: {e}")
+
+if __name__ == "__main__":
+    main()```
