@@ -8,7 +8,7 @@ set "PROCESS_SCRIPT=process_data.py"
 set "INJECT_SCRIPT=inject_text.py"
 set "TEMP_ENEX=temp_tracked_reference.enex"
 set "EXTRACT_JSON=ai_input.json"
-set "FINAL_ENEX=Final_Updated_Notes.enex"
+set "SOURCE_NAME=source_filename.txt"
 
 echo =======================================================
 echo Starting Evernote Text Transformation Pipeline
@@ -60,22 +60,25 @@ echo.
 echo Cleaning up temporary files...
 
 if exist "%OUTPUT_DIR%\%TEMP_ENEX%" (
-REM     del /f /q "%OUTPUT_DIR%\%TEMP_ENEX%"
+    del /f /q "%OUTPUT_DIR%\%TEMP_ENEX%"
     echo   - Removed temporary reference: %TEMP_ENEX%
 )
 
 if exist "%OUTPUT_DIR%\%EXTRACT_JSON%" (
-REM     del /f /q "%OUTPUT_DIR%\%EXTRACT_JSON%"
+    del /f /q "%OUTPUT_DIR%\%EXTRACT_JSON%"
     echo   - Removed initial extraction payload: %EXTRACT_JSON%
 )
 
-:: Clear the dynamic json file used during this run
-REM  del /f /q "%OUTPUT_DIR%\gemini-code-*.json" >nul 2>&1
+if exist "%OUTPUT_DIR%\%SOURCE_NAME%" (
+    del /f /q "%OUTPUT_DIR%\%SOURCE_NAME%"
+    echo   - Removed source filename reference: %SOURCE_NAME%
+)
 
-echo   - Flushed raw input payload archives from target output directory.
+del /f /q "%OUTPUT_DIR%\gemini-code-*.json" >nul 2>&1
+echo   - Flushed Gemini output payload from output directory.
 
 echo =======================================================
-echo Success! Final Evernote note ready: '%OUTPUT_DIR%\%FINAL_ENEX%'
+echo Success! Final Evernote file ready inside '%OUTPUT_DIR%'
 echo =======================================================
 goto :end
 
