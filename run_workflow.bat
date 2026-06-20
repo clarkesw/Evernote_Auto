@@ -80,14 +80,12 @@ echo   - Flushed Gemini output payload from output directory.
 echo =======================================================
 echo Success! Final Evernote file ready inside '%OUTPUT_DIR%'
 echo =======================================================
-goto :end
+endlocal
+exit /b 0
 
 :error
 echo =======================================================
 echo Pipeline terminated due to an error. Temporary files preserved.
 echo =======================================================
-exit /b 1
-
-:end
-endlocal
 pause
+exit /b 1

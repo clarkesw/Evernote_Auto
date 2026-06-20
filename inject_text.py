@@ -39,8 +39,17 @@ def inject_enex_segments(output_dir):
     with open(ai_json_output_path, 'r', encoding='utf-8') as f:
         ai_updates = json.load(f)
 
+    # Each <content> tag (one per note) gets its own unique marker token,
+    # and its own resolved ENML payload, so multi-note notebooks don't
+    # collide with each other during the final string replacement.
+    payload_map = {}
+    note_index = 0
+
     for content_tag in root.iter('content'):
         if content_tag.text:
+            note_index += 1
+            marker_token = f"__EVERNOTE_RAW_CDATA_MARKER_TOKEN_{note_index}__"
+
             soup = BeautifulSoup(content_tag.text, 'xml')
 
             for block_id, updated_text in ai_updates.items():
@@ -70,7 +79,8 @@ def inject_enex_segments(output_dir):
                 f'{raw_en_note}'
             )
 
-            content_tag.text = "__EVERNOTE_RAW_CDATA_MARKER_TOKEN__"
+            payload_map[marker_token] = enml_payload
+            content_tag.text = marker_token
 
     raw_xml_bytes = ET.tostring(root, encoding='utf-8')
     raw_xml_str = raw_xml_bytes.decode('utf-8')
@@ -78,13 +88,15 @@ def inject_enex_segments(output_dir):
     if not raw_xml_str.startswith('<?xml'):
         raw_xml_str = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml_str
 
-    cdata_safe_payload = f"<![CDATA[{enml_payload}]]>"
-    final_output_string = raw_xml_str.replace("__EVERNOTE_RAW_CDATA_MARKER_TOKEN__", cdata_safe_payload)
+    final_output_string = raw_xml_str
+    for marker_token, enml_payload in payload_map.items():
+        cdata_safe_payload = f"<![CDATA[{enml_payload}]]>"
+        final_output_string = final_output_string.replace(marker_token, cdata_safe_payload)
 
     with open(final_enex_output_path, 'w', encoding='utf-8') as f:
         f.write(final_output_string)
 
-    print(f"Injection successful! Final document generated at '{final_enex_output_path}'")
+    print(f"Injection successful! Final document generated at '{final_enex_output_path}' ({note_index} notes processed)")
 
 if __name__ == "__main__":
     inject_enex_segments("output")
