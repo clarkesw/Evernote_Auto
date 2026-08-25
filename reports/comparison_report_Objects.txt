@@ -1,0 +1,1775 @@
+Original file: Objects.enex -> 568 text blocks
+Final file:    ai_notes\Objects.enex -> 568 text blocks
+======================================================================
+[Block 1] CHANGED (note: Enums)
+  ORIGINAL: Enums represent a specialized data type used to define a fixed set of named constant values.  This programming concept allows developers to create variables restricted to a specific group of predefined elements.  Using enum types is ideal for representing natural sets, such as the days of the week.  They are also highly effective for datasets where every possible value is known during the compilation phase.  Common examples include menu options, command-line flags, or the planets within our own solar system.  This restriction significantly improves code readability by replacing vague integers or strings with descriptive names.  Furthermore, enums provide strong type safety by preventing the assignment of invalid or unexpected data values.  In Java, enums are essentially classes, allowing them to include fields, methods, and even internal logic.  This structure makes them much more powerful than simple constant lists found in other programming languages.
+  FINAL:    Enums are like custom data types.  They define a fixed set of named constant values.  Developers use enums to restrict variables.  This means variables can only hold predefined elements.  Enums are perfect for natural sets.  Think of days of the week.  They also work well for datasets.  These datasets have all possible values known at compilation.  Examples include menu options or command-line flags.  This restriction boosts code readability significantly.  Vague integers become descriptive names.  Furthermore, enums enforce strong type safety.  They prevent invalid data assignment.  In Java, enums function as classes.  They support fields, methods, and internal logic.  This structure makes them powerful.
+
+[Block 2] CHANGED (note: Enums)
+  ORIGINAL: enum (Keyword) - declares an enumerated (unchangeable) type.
+  FINAL:    enum (Keyword) - declares an enumerated type.  This type holds unchangeable, predefined constant values.
+
+[Block 3] CHANGED (note: Enums)
+  ORIGINAL: Enum (Class) - allows a list of values for a Type that you create, collection of constants.   Then compiler automatically adds some special methods when it creates an Enum.
+  FINAL:    Enum (Class) - allows you to create a list of values for a type.  The compiler automatically adds special methods to this Enum.
+
+[Block 4] CHANGED (note: Enums)
+  ORIGINAL: EnumSet - specialized and highly optimized Set implementation exclusively intended for use with enum types.
+  FINAL:    EnumSet - a highly optimized Set implementation. It is exclusively for use with enum types.
+
+[Block 5] CHANGED (note: Unqualified Access)
+  ORIGINAL: This refers to unqualified member access.  This occurs when you access an instance member—a field or a method—of the current object.  You achieve this by simply using the member's name without explicitly including the this keyword.  This direct access is only possible within the context of an instance method or a constructor of the same class.  When you use the member's name alone, the Java compiler automatically prepends the implicit reference this.  This means the member being accessed belongs to the object on which the current method was invoked.  This method is used extensively because it provides a clean and concise syntax within the class's internal logic.
+  FINAL:    Unqualified member access is like using a nickname for a family member.  You access a field or method directly.  This occurs without the this keyword.  It's possible within an instance method.  It also works in a constructor of the same class.  The Java compiler automatically adds an implicit this.  This indicates the member belongs to the current object.  Developers use this for clean, concise code.  It simplifies internal class logic.
+
+[Block 6] CHANGED (note: Unqualified Access)
+  ORIGINAL: Instance Variables and Methods - are accessed directly within the same class without specifying the object reference.
+  FINAL:    Instance Variables and Methods - are accessed directly within the same class. No explicit object reference is needed.
+
+[Block 7] CHANGED (note: Unqualified Access)
+  ORIGINAL: Local Variables - are accessed directly within the method or block where they are declared.
+  FINAL:    Local Variables - are directly accessed within their declared method. This also applies within their declared block.
+
+[Block 8] CHANGED (note: Unqualified Access)
+  ORIGINAL: this keyword - can be used to qualify access to instance variables and methods to avoid ambiguity, particularly when local variables or parameters have the same name.
+  FINAL:    this keyword - can qualify instance variable access. It also qualifies method access. This avoids ambiguity. It helps when local variables or parameters share names.
+
+[Block 9] CHANGED (note: Unqualified Access)
+  ORIGINAL: Ex) Different Types of Unqualified access.
+  FINAL:    Here are examples of different unqualified access types.
+
+[Block 10] CHANGED (note: Unqualified Access)
+  ORIGINAL: //---  Instance Variables and Methodspublic class Example {    int instanceVariable;    void instanceMethod() {        // unqualified access to instanceVariable        instanceVariable = 5;         // unqualified access to anotherInstanceMethod        anotherInstanceMethod();     }    void anotherInstanceMethod() {}}//--- Local Variablespublic void someMethod() {    int localVariable = 10;    // unqualified access to localVariable    System.out.println(localVariable); }//--- this keywordpublic class Example {    int value;    void setValue(int value) {        // qualified access using 'this' to avoid ambiguity        this.value = value;     }}
+  FINAL:    //---  Instance Variables and Methodspublic class Example {  int instanceVariable;  void instanceMethod() {    // unqualified access to instanceVariable    instanceVariable = 5;     // unqualified access to anotherInstanceMethod    anotherInstanceMethod();   }  void anotherInstanceMethod() {}}//--- Local Variablespublic void someMethod() {  int localVariable = 10;  // unqualified access to localVariable  System.out.println(localVariable); }//--- this keywordpublic class Example {  int value;  void setValue(int value) {    // qualified access using 'this' to avoid ambiguity    this.value = value;   }}
+
+[Block 11] CHANGED (note: Unqualified Access)
+  ORIGINAL: //---  Instance Variables and Methods
+  FINAL:    //---  Instance Variables and Methods
+
+[Block 12] UNCHANGED (note: Unqualified Access)
+  TEXT: public class Example {
+
+[Block 13] UNCHANGED (note: Unqualified Access)
+  TEXT: int instanceVariable;
+
+[Block 14] UNCHANGED (note: Unqualified Access)
+  TEXT: void instanceMethod() {
+
+[Block 15] UNCHANGED (note: Unqualified Access)
+  TEXT: // unqualified access to instanceVariable
+
+[Block 16] UNCHANGED (note: Unqualified Access)
+  TEXT: instanceVariable = 5;
+
+[Block 17] UNCHANGED (note: Unqualified Access)
+  TEXT: // unqualified access to anotherInstanceMethod
+
+[Block 18] UNCHANGED (note: Unqualified Access)
+  TEXT: void anotherInstanceMethod() {}
+
+[Block 19] UNCHANGED (note: Unqualified Access)
+  TEXT: //--- Local Variables
+
+[Block 20] UNCHANGED (note: Unqualified Access)
+  TEXT: public void someMethod() {
+
+[Block 21] UNCHANGED (note: Unqualified Access)
+  TEXT: int localVariable = 10;
+
+[Block 22] UNCHANGED (note: Unqualified Access)
+  TEXT: // unqualified access to localVariable
+
+[Block 23] UNCHANGED (note: Unqualified Access)
+  TEXT: //--- this keyword
+
+[Block 24] UNCHANGED (note: Unqualified Access)
+  TEXT: public class Example {
+
+[Block 25] UNCHANGED (note: Unqualified Access)
+  TEXT: int value;
+
+[Block 26] UNCHANGED (note: Unqualified Access)
+  TEXT: void setValue(int value) {
+
+[Block 27] UNCHANGED (note: Unqualified Access)
+  TEXT: // qualified access using 'this' to avoid ambiguity
+
+[Block 28] UNCHANGED (note: Unqualified Access)
+  TEXT: this.value = value;
+
+[Block 29] CHANGED (note: Reference Type)
+  ORIGINAL: Reference types hold references to objects and provide a means to access those objects stored somewhere in memory.  In other words, data types that hold the memory address of an object, rather than the object itself.  The memory locations are irrelevant to programmers.  All reference types are a subclass of type java.lang.Object.
+  FINAL:    Reference types are like pointers.  They hold memory addresses, not the object itself.  These addresses let you find objects.  Objects are stored elsewhere in memory.  The specific memory locations are abstracted from developers.  All reference types extend java.lang.Object.
+
+[Block 30] CHANGED (note: Reference Type)
+  ORIGINAL: Provides a way to associate metadata (data about data) with program elements.
+  FINAL:    This provides a way to attach metadata to program elements.  It associates data about data with code.
+
+[Block 31] CHANGED (note: Reference Type)
+  ORIGINAL: Provides a fixed-size data structure that stores data elements of the same type.
+  FINAL:    This provides a fixed-size data structure.  It stores data elements of the same type.
+
+[Block 32] CHANGED (note: Reference Type)
+  ORIGINAL: Designed to provide inheritance, polymorphism, and encapsulation.
+  FINAL:    This concept supports inheritance, polymorphism, and encapsulation.  It defines core object-oriented principles.
+
+[Block 33] CHANGED (note: Reference Type)
+  ORIGINAL: A reference for a set of objects that represents a related set of choices.
+  FINAL:    This represents a collection of choices.  It refers to a related set of objects.
+
+[Block 34] CHANGED (note: Reference Type)
+  ORIGINAL: Provides a public API and is “implemented” by Java classes.
+  FINAL:    This provides a public API.  It is implemented by Java classes.
+
+[Block 35] CHANGED (note: Immutable)
+  ORIGINAL: An immutable object in Java is an object whose internal state cannot be changed after it has been created.  Once you create an instance of an immutable class, the values of its fields remain constant throughout its lifetime.  If you need a modified version of the object, you must create a new immutable object with the desired changes.
+  FINAL:    An immutable object is like a sealed container.  Its internal state cannot change after creation.  Once an instance is made, its field values stay constant.  If you need a different version, you must create a new object.  This new object will have the desired modifications.
+
+[Block 36] CHANGED (note: Immutable)
+  ORIGINAL: Thread Safety: the reference to an immutable object may not be thread safe.
+  FINAL:    Thread Safety: the reference pointing to an immutable object may not be thread safe.
+
+[Block 37] CHANGED (note: Immutable)
+  ORIGINAL: Security - immutable objects are inherently thread-safe.
+  FINAL:    Security - immutable objects are inherently thread-safe. This simplifies concurrent programming paradigms.
+
+[Block 38] CHANGED (note: Immutable)
+  ORIGINAL: Caching - for frequently used values, to improve performance.
+  FINAL:    Caching - these optimize performance for frequently used values. They store computed results for quicker retrieval.
+
+[Block 39] CHANGED (note: Immutable)
+  ORIGINAL: Hashing - immutable objects provide consistent hash codes, which are essential for their use in hash-based collections like HashMap and HashSet.
+  FINAL:    Hashing - immutable objects offer consistent hash codes. This is vital for hash-based collections.
+
+[Block 40] UNCHANGED (note: Immutable)
+  TEXT: Simplifies - the design and implementation of classes that use wrapper objects.
+
+[Block 41] CHANGED (note: Immutable)
+  ORIGINAL: No Setter - methods.
+  FINAL:    No Setter - methods are present. This prevents modification of internal state.
+
+[Block 42] CHANGED (note: Immutable)
+  ORIGINAL: Only Getter - to check and return an instance of the class.
+  FINAL:    Only Getter - methods exist. They check and return an instance of the class.
+
+[Block 43] CHANGED (note: Immutable)
+  ORIGINAL: Class final - must be declared so that child classes can’t be created.
+  FINAL:    Class final - must be declared so. Child classes cannot be created from it.
+
+[Block 44] CHANGED (note: Immutable)
+  ORIGINAL: Data Members - must be declared
+  FINAL:    Data Members - must be declared. They store the object's state.
+
+[Block 45] CHANGED (note: Immutable)
+  ORIGINAL: private - so that direct access is not allowed.
+  FINAL:    private - so direct access is not allowed. This enforces encapsulation.
+
+[Block 46] CHANGED (note: Immutable)
+  ORIGINAL: final - so that we can’t change the value of it after object creation.
+  FINAL:    final - so the value cannot be changed. This applies after object creation.
+
+[Block 47] CHANGED (note: Immutable)
+  ORIGINAL: Parameterized Constructor - should initialize all the fields by performing a deep copy so that data members can’t be modified with an object reference.
+  FINAL:    Parameterized Constructor - should initialize all fields. It performs a deep copy. This prevents data members from being modified via object reference.
+
+[Block 48] CHANGED (note: Immutable)
+  ORIGINAL: Ex) The FinalClassExample class defines the fields and provides the constructor method that uses deep copy to initialize the object. The code in main() of FinalClassExample tests the immutability of the object.
+  FINAL:    The FinalClassExample defines fields and uses a deep copy constructor.  This constructor initializes the object.  The main() method tests the object's immutability.  It demonstrates how immutability works in practice.
+
+[Block 49] CHANGED (note: Immutable)
+  ORIGINAL: public final class FinalClassExample {   private final int id;   private final String name;   private final HashMapString, String> testMap;   public int getId() {      return id;   }   public String getName() {      return name;   }   // Getter function for mutable objects   public HashMapString, String> getTestMap() {      return (HashMapString, String>) testMap.clone();   }   // Constructor method performing deep copy   public FinalClassExample(int i, String n, HashMapString, String> hm) {      System.out.println("Performing Deep Copy for Object initialization");      // "this" keyword refers to the current object      this.id = i;      this.name = n;      HashMapString, String> tempMap = new HashMap>();      String key;      IteratorString> it = hm.keySet().iterator();      while (it.hasNext()) {         key = it.next();         tempMap.put(key, hm.get(key));      }      this.testMap = tempMap;   }   // Test the immutable class   public static void main(String[] args) {      HashMapString, String> h1 = new HashMap>();      h1.put("1", "first");      h1.put("2", "second");      String s = "original";      int i = 10;      FinalClassExample ce = new FinalClassExample(i, s, h1);      // print the ce values      System.out.println("ce id: " + ce.getId());      System.out.println("ce name: " + ce.getName());      System.out.println("ce testMap: " + ce.getTestMap());      // change the local variable values      i = 20;      s = "modified";      h1.put("3", "third");      // print the values again      System.out.println("ce id after local variable change: "                     + ce.getId());      System.out.println("ce name after local variable change: "                     + ce.getName());      System.out.println("ce testMap after local variable change: "                     + ce.getTestMap());      HashMapString, String> hmTest = ce.getTestMap();      hmTest.put("4", "new");      System.out.println("ce testMap af change var getter methods: "                     + ce.getTestMap());   }}
+  FINAL:    public final class FinalClassExample {  private final int id;  private final String name;  private final HashMapString, String> testMap;  public int getId() {    return id;  }  public String getName() {    return name;  }  // Getter function for mutable objects  public HashMapString, String> getTestMap() {    return (HashMapString, String>) testMap.clone();  }  // Constructor method performing deep copy  public FinalClassExample(int i, String n, HashMapString, String> hm) {    System.out.println("Performing Deep Copy for Object initialization");    // "this" keyword refers to the current object    this.id = i;    this.name = n;    HashMapString, String> tempMap = new HashMap>();    String key;    IteratorString> it = hm.keySet().iterator();    while (it.hasNext()) {      key = it.next();      tempMap.put(key, hm.get(key));    }    this.testMap = tempMap;  }  // Test the immutable class  public static void main(String[] args) {    HashMapString, String> h1 = new HashMap>();    h1.put("1", "first");    h1.put("2", "second");    String s = "original";    int i = 10;    FinalClassExample ce = new FinalClassExample(i, s, h1);    // print the ce values    System.out.println("ce id: " + ce.getId());    System.out.println("ce name: " + ce.getName());    System.out.println("ce testMap: " + ce.getTestMap());    // change the local variable values    i = 20;    s = "modified";    h1.put("3", "third");    // print the values again    System.out.println("ce id after local variable change: "           + ce.getId());    System.out.println("ce name after local variable change: "           + ce.getName());    System.out.println("ce testMap after local variable change: "           + ce.getTestMap());    HashMapString, String> hmTest = ce.getTestMap();    hmTest.put("4", "new");    System.out.println("ce testMap af change var getter methods: "           + ce.getTestMap());  }}
+
+[Block 50] UNCHANGED (note: Immutable)
+  TEXT: public final class FinalClassExample {
+
+[Block 51] UNCHANGED (note: Immutable)
+  TEXT: private final int id;
+
+[Block 52] UNCHANGED (note: Immutable)
+  TEXT: private final String name;
+
+[Block 53] UNCHANGED (note: Immutable)
+  TEXT: private final HashMapString, String> testMap;
+
+[Block 54] UNCHANGED (note: Immutable)
+  TEXT: public int getId() {
+
+[Block 55] UNCHANGED (note: Immutable)
+  TEXT: return id;
+
+[Block 56] UNCHANGED (note: Immutable)
+  TEXT: public String getName() {
+
+[Block 57] UNCHANGED (note: Immutable)
+  TEXT: return name;
+
+[Block 58] UNCHANGED (note: Immutable)
+  TEXT: // Getter function for mutable objects
+
+[Block 59] UNCHANGED (note: Immutable)
+  TEXT: public HashMapString, String> getTestMap() {
+
+[Block 60] UNCHANGED (note: Immutable)
+  TEXT: return (HashMapString, String>) testMap.clone();
+
+[Block 61] UNCHANGED (note: Immutable)
+  TEXT: // Constructor method performing deep copy
+
+[Block 62] UNCHANGED (note: Immutable)
+  TEXT: public FinalClassExample(int i, String n, HashMapString, String> hm) {
+
+[Block 63] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("Performing Deep Copy for Object initialization");
+
+[Block 64] UNCHANGED (note: Immutable)
+  TEXT: // "this" keyword refers to the current object
+
+[Block 65] UNCHANGED (note: Immutable)
+  TEXT: this.id = i;
+
+[Block 66] UNCHANGED (note: Immutable)
+  TEXT: this.name = n;
+
+[Block 67] UNCHANGED (note: Immutable)
+  TEXT: HashMapString, String> tempMap = new HashMap>();
+
+[Block 68] UNCHANGED (note: Immutable)
+  TEXT: String key;
+
+[Block 69] UNCHANGED (note: Immutable)
+  TEXT: IteratorString> it = hm.keySet().iterator();
+
+[Block 70] UNCHANGED (note: Immutable)
+  TEXT: while (it.hasNext()) {
+
+[Block 71] UNCHANGED (note: Immutable)
+  TEXT: key = it.next();
+
+[Block 72] UNCHANGED (note: Immutable)
+  TEXT: tempMap.put(key, hm.get(key));
+
+[Block 73] UNCHANGED (note: Immutable)
+  TEXT: this.testMap = tempMap;
+
+[Block 74] UNCHANGED (note: Immutable)
+  TEXT: // Test the immutable class
+
+[Block 75] UNCHANGED (note: Immutable)
+  TEXT: public static void main(String[] args) {
+
+[Block 76] UNCHANGED (note: Immutable)
+  TEXT: HashMapString, String> h1 = new HashMap>();
+
+[Block 77] UNCHANGED (note: Immutable)
+  TEXT: h1.put("1", "first");
+
+[Block 78] UNCHANGED (note: Immutable)
+  TEXT: h1.put("2", "second");
+
+[Block 79] UNCHANGED (note: Immutable)
+  TEXT: String s = "original";
+
+[Block 80] UNCHANGED (note: Immutable)
+  TEXT: int i = 10;
+
+[Block 81] UNCHANGED (note: Immutable)
+  TEXT: FinalClassExample ce = new FinalClassExample(i, s, h1);
+
+[Block 82] UNCHANGED (note: Immutable)
+  TEXT: // print the ce values
+
+[Block 83] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("ce id: " + ce.getId());
+
+[Block 84] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("ce name: " + ce.getName());
+
+[Block 85] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("ce testMap: " + ce.getTestMap());
+
+[Block 86] UNCHANGED (note: Immutable)
+  TEXT: // change the local variable values
+
+[Block 87] UNCHANGED (note: Immutable)
+  TEXT: i = 20;
+
+[Block 88] UNCHANGED (note: Immutable)
+  TEXT: s = "modified";
+
+[Block 89] UNCHANGED (note: Immutable)
+  TEXT: h1.put("3", "third");
+
+[Block 90] UNCHANGED (note: Immutable)
+  TEXT: // print the values again
+
+[Block 91] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("ce id after local variable change: "
+
+[Block 92] UNCHANGED (note: Immutable)
+  TEXT: + ce.getId());
+
+[Block 93] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("ce name after local variable change: "
+
+[Block 94] UNCHANGED (note: Immutable)
+  TEXT: + ce.getName());
+
+[Block 95] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("ce testMap after local variable change: "
+
+[Block 96] UNCHANGED (note: Immutable)
+  TEXT: + ce.getTestMap());
+
+[Block 97] UNCHANGED (note: Immutable)
+  TEXT: HashMapString, String> hmTest = ce.getTestMap();
+
+[Block 98] UNCHANGED (note: Immutable)
+  TEXT: hmTest.put("4", "new");
+
+[Block 99] UNCHANGED (note: Immutable)
+  TEXT: System.out.println("ce testMap af change var getter methods: "
+
+[Block 100] UNCHANGED (note: Immutable)
+  TEXT: + ce.getTestMap());
+
+[Block 101] CHANGED (note: Object)
+  ORIGINAL: A class serves as a blueprint, a container holding variables (fields) that define an object's characteristics and methods that describe its behaviors.  Objects, are the concrete instances created from these classes, reside in the Heap memory.  The Method Area holds the references that point to these objects.  When a method is called on an object, the Java Virtual Machine (JVM) uses the reference to locate the object in the Heap.  From there, it accesses the object's class information and employs a method table to efficiently find and execute the specific method being invoked.
+  FINAL:    A class is like a blueprint.  It defines an object's characteristics and behaviors.  Variables (fields) define characteristics.  Methods describe behaviors.  Objects are concrete instances created from these classes.  These objects reside in Heap memory.  The Method Area holds references to these objects.  When a method is called, the JVM uses the reference.  It locates the object in the Heap.  Then, it accesses class information.  A method table helps find the correct method.  This ensures efficient execution.
+
+[Block 102] CHANGED (note: Object)
+  ORIGINAL: Object: actual Java class.
+  FINAL:    Object: an actual Java class. It represents a concrete instance.
+
+[Block 103] CHANGED (note: Object)
+  ORIGINAL: Copies: these can be shallow or deep.
+  FINAL:    Copies: these can be either shallow or deep. Each type handles nested objects differently.
+
+[Block 104] CHANGED (note: Object)
+  ORIGINAL: Objects: class containing static utility methods that operation on objects and can handle nulls.
+  FINAL:    Objects: a class containing static utility methods. These methods operate on objects. They are also designed to handle nulls.
+
+[Block 105] CHANGED (note: Object)
+  ORIGINAL: Creation: how to instantiate and initialize an object.
+  FINAL:    Creation: this describes how to instantiate an object. It also details how to initialize an object.
+
+[Block 106] CHANGED (note: Object)
+  ORIGINAL: Fields - global variables declared within a class.
+  FINAL:    Fields - global variables declared within a class. They define an object's characteristics.
+
+[Block 107] CHANGED (note: Object)
+  ORIGINAL: Constructors - called to create an instance of a class.
+  FINAL:    Constructors - called to create an instance. They initialize a new class object.
+
+[Block 108] CHANGED (note: Object)
+  ORIGINAL: Access Modifiers - the methods and fields can have different access modifiers that control the accessibility from outside the class.
+  FINAL:    Access Modifiers - control accessibility from outside the class. They apply to methods and fields.
+
+[Block 109] CHANGED (note: Object)
+  ORIGINAL: Instance Methods - custom and all the inherited methods from the Object class.
+  FINAL:    Instance Methods - custom methods exist within an object. They include all inherited methods from Object.
+
+[Block 110] CHANGED (note: Object)
+  ORIGINAL: State - the current condition of an object.
+  FINAL:    State - the current condition of an object. It reflects its attribute values.
+
+[Block 111] CHANGED (note: Object)
+  ORIGINAL: Behavior - methods.
+  FINAL:    Behavior - defines an object's actions. These actions are represented by its methods.
+
+[Block 112] CHANGED (note: Object)
+  ORIGINAL: Identity - is typically implemented via a unique ID which is not visible to the external user, but used by the JVM.
+  FINAL:    Identity - implemented via a unique ID. This ID is typically invisible to external users. The JVM uses it internally.
+
+[Block 113] CHANGED (note: Object)
+  ORIGINAL: Immutability - immutable objects have fields with final values, while mutable objects allow their fields to be modified.
+  FINAL:    Immutability - immutable objects have final field values. Mutable objects allow field modification.
+
+[Block 114] CHANGED (note: Object)
+  ORIGINAL: The java.lang.Object class is truly fundamental in Java. It's the root of the class hierarchy.  This means that every other class in Java, whether it's one you write, a class from the Java standard library (like String or ArrayList), or a class from a third-party library, directly or indirectly inherits from Object.
+  FINAL:    The java.lang.Object class is the foundation of Java.  It sits at the very top of the class hierarchy.  Every other class in Java inherits from Object.  This includes user-defined classes and standard library classes.  String and ArrayList are examples.  Third-party library classes also inherit from it.
+
+[Block 115] CHANGED (note: Object)
+  ORIGINAL: Methods: all the methods in the Object class.
+  FINAL:    Methods: all the methods in the Object class. These are inherited by every Java object.
+
+[Block 116] CHANGED (note: Immutable - Thread Safety)
+  ORIGINAL: While immutable objects in Java inherently possess thread safety due to their unmodifiable state, ensuring the thread safety of the reference that points to them requires separate consideration.  The immutability of an object guarantees consistent internal state across threads, but the reference variable itself is mutable and susceptible to race conditions if multiple threads concurrently attempt to reassign it to a different immutable object.  To manage this, several strategies can be employed.  Declaring the reference as final prevents any reassignment after initialization, ensuring that all threads always see the same immutable object.  For scenarios where reassignment is necessary, synchronization mechanisms like synchronized blocks or AtomicReference can control concurrent access to the reference.  Alternatively, ThreadLocal can provide each thread with its own independent copy of the reference. When dealing with collections, using immutable wrappers or concurrent collection classes can help maintain thread safety even when the collection's "elements" are immutable.  Ultimately, while object immutability solves the problem of state mutation, careful management of the reference to the immutable object is crucial for complete thread safety in concurrent Java programs.
+  FINAL:    Immutable objects provide inherent thread safety.  Their internal state cannot change after creation.  However, the reference to an immutable object can be mutable.  This reference is susceptible to race conditions.  Multiple threads might reassign it concurrently.  To fix this, declare the reference as final.  This prevents reassignment after initialization.  All threads will then see the same object.  If reassignment is needed, use synchronized blocks.  AtomicReference can also control concurrent access.  Alternatively, ThreadLocal gives each thread its own reference copy.  For collections, use immutable wrappers.  Concurrent collection classes also help maintain safety.  Ultimately, managing the reference ensures complete thread safety.
+
+[Block 117] CHANGED (note: Immutable - Thread Safety)
+  ORIGINAL: Reference Reassignment: mutable references to immutable objects
+  FINAL:    Reference Reassignment: mutable references can point to immutable objects. This requires careful handling.
+
+[Block 118] CHANGED (note: Immutable - Thread Safety)
+  ORIGINAL: synchronized - by enclosing the code that modifies the reference within a synchronized block, you ensure that only one thread can change the reference at any point.
+  FINAL:    synchronized - this block ensures only one thread modifies the reference. It controls concurrent changes to the reference.
+
+[Block 119] CHANGED (note: Immutable - Thread Safety)
+  ORIGINAL: AtomicReference - uses low-level hardware primitives (like Compare-and-Swap) to ensure thread-safe updates to the reference without the need for explicit locking in many cases.
+  FINAL:    AtomicReference - uses low-level hardware primitives. This ensures thread-safe updates to the reference. It often avoids explicit locking.
+
+[Block 120] CHANGED (note: Immutable - Thread Safety)
+  ORIGINAL: Ex) The Calculator class holds a reference to an ImmutableValue instance.  Notice how it is possible to change that reference through both the setValue() or add().  Therefore, even if the Calculator class uses an immutable object internally, it is not itself immutable, and therefore not thread safe.
+  FINAL:    The Calculator class holds an ImmutableValue instance.  The reference can change via setValue() or add().  Therefore, Calculator is not immutable.  Consequently, it is not thread-safe.  This shows external mutability.
+
+[Block 121] CHANGED (note: Immutable - Thread Safety)
+  ORIGINAL: public class ImmutableValue{  private int value = 0;  public ImmutableValue(int value){    this.value = value;  }  public int getValue(){    return this.value;  }}
+  FINAL:    public class ImmutableValue{  private int value = 0;  public ImmutableValue(int value){    this.value = value;  }  public int getValue(){    return this.value;  }}
+
+[Block 122] UNCHANGED (note: Immutable - Thread Safety)
+  TEXT: public class ImmutableValue{
+
+[Block 123] UNCHANGED (note: Immutable - Thread Safety)
+  TEXT: private int value = 0;
+
+[Block 124] UNCHANGED (note: Immutable - Thread Safety)
+  TEXT: public ImmutableValue(int value){
+
+[Block 125] UNCHANGED (note: Immutable - Thread Safety)
+  TEXT: this.value = value;
+
+[Block 126] UNCHANGED (note: Immutable - Thread Safety)
+  TEXT: public int getValue(){
+
+[Block 127] UNCHANGED (note: Immutable - Thread Safety)
+  TEXT: return this.value;
+
+[Block 128] CHANGED (note: Object - State)
+  ORIGINAL: The state of an object in object-oriented programming refers to the set of values held by its attributes (fields or instance variables) at a specific moment.  This data collectively defines the object's current condition, characteristics, and properties.  Representing the dynamic aspect of an object's existence, its state can change over time through the invocation of methods.  The state is a fundamental concept in OOP, directly influenced by the object's class definition and the values assigned to its instance variables.
+  FINAL:    An object's state is like its current snapshot.  It is defined by the values of its attributes.  These attributes are fields or instance variables.  This data collectively describes the object's condition.  Methods can change an object's state over time.  The object's class definition influences its state.  Assigned instance variable values also shape the state.
+
+[Block 129] CHANGED (note: Object - State)
+  ORIGINAL: Fields (Attributes) - represent the state of an object.  These are variables declared within the class and are used to store data that defines the object's properties.  State variables hold data that is unique to each instance of the class.
+  FINAL:    Fields (Attributes) - represent an object's state. These variables, declared within the class, store data. They define an object's properties. State variables hold data unique to each instance.
+
+[Block 130] CHANGED (note: Object - State)
+  ORIGINAL: Initialization - state variables are usually initialized in the class's constructor or through setter methods.
+  FINAL:    Initialization - state variables are typically set in the constructor. They can also be set through setter methods.
+
+[Block 131] CHANGED (note: Objects)
+  ORIGINAL: The java.util.Objects class in Java is a utility class that provides static methods for working with objects.  It offers helpful functions for common tasks such as comparing objects, generating hash codes, checking for nulls, and more.  The primary goal of this class is to simplify and standardize these operations, often making your code more concise and less error-prone, especially when dealing with potential null values.  These utilities include null-safe or null-tolerant methods for computing the hash code of an object, returning a string for an object, and comparing two objects.
+  FINAL:    The java.util.Objects class offers helpful static methods.  These methods simplify common object operations.  It compares objects and generates hash codes.  It also safely checks for null values.  The main goal is to standardize operations.  This makes code more concise.  It reduces errors, especially with potential null values.  Utilities include null-safe hash code computation.  They also provide null-tolerant string representations.  Finally, they enable comparing two objects safely.
+
+[Block 132] CHANGED (note: Objects)
+  ORIGINAL: equals(Object a, Object b) - null-safe method, if a and b are equal it will return true or false otherwise.
+  FINAL:    equals(Object a, Object b) - this null-safe method returns true if objects are equal. Otherwise, it returns false.
+
+[Block 133] CHANGED (note: Objects)
+  ORIGINAL: compare() - pass the two objects to be compared along with the Comparator to do so.
+  FINAL:    compare() - pass the two objects for comparison. Include the Comparator to perform this comparison.
+
+[Block 134] CHANGED (note: Objects)
+  ORIGINAL: hash() - generates a hash code for a sequence of input values.
+  FINAL:    hash() - generates a hash code. It does this for a sequence of input values.
+
+[Block 135] CHANGED (note: Objects)
+  ORIGINAL: class PairK, V>{   public K key;   public V value;   public Pair(K key, V value){      this.key = key;      this.value = value;   }   @Override   public String toString(){      return "Pair {key = " + Objects.toString(key) + ", value = " +          Objects.toString(value, "no value") + "}";   /* without Objects.toString() the above line would look like below:      return "Pair {key = " + (key == null ? "null" : key.toString()) +     ", value = " + (value == null ? "no value" : value.toString()) + "}";*/   }}class GFG{   public static void main(String[] args){      PairString, String> p1 = new Pair> ("GFG", "geeksforgeeks.org");      PairString, String> p2 = new Pair>("Code", null);      System.out.println(p1);      System.out.println(p2);   }}// Pair {key = GFG, value = geeksforgeeks.org}// Pair {key = Code, value = no value}
+  FINAL:    class PairK, V>{  public K key;  public V value;  public Pair(K key, V value){    this.key = key;    this.value = value;  }  @Override  public String toString(){    return "Pair {key = " + Objects.toString(key) + ", value = " +      Objects.toString(value, "no value") + "}";  /* without Objects.toString() the above line would look like below:    return "Pair {key = " + (key == null ? "null" : key.toString()) +     ", value = " + (value == null ? "no value" : value.toString()) + "}";*/  }}class GFG{  public static void main(String[] args){    PairString, String> p1 = new Pair> ("GFG", "geeksforgeeks.org");    PairString, String> p2 = new Pair>("Code", null);    System.out.println(p1);    System.out.println(p2);  }}// Pair {key = GFG, value = geeksforgeeks.org}// Pair {key = Code, value = no value}
+
+[Block 136] UNCHANGED (note: Objects)
+  TEXT: class PairK, V>{
+
+[Block 137] UNCHANGED (note: Objects)
+  TEXT: public K key;
+
+[Block 138] UNCHANGED (note: Objects)
+  TEXT: public V value;
+
+[Block 139] UNCHANGED (note: Objects)
+  TEXT: public Pair(K key, V value){
+
+[Block 140] UNCHANGED (note: Objects)
+  TEXT: this.key = key;
+
+[Block 141] UNCHANGED (note: Objects)
+  TEXT: this.value = value;
+
+[Block 142] UNCHANGED (note: Objects)
+  TEXT: public String toString(){
+
+[Block 143] UNCHANGED (note: Objects)
+  TEXT: return "Pair {key = " + Objects.toString(key) + ", value = " +
+
+[Block 144] UNCHANGED (note: Objects)
+  TEXT: Objects.toString(value, "no value") + "}";
+
+[Block 145] UNCHANGED (note: Objects)
+  TEXT: /* without Objects.toString() the above line would look like below:
+
+[Block 146] UNCHANGED (note: Objects)
+  TEXT: return "Pair {key = " + (key == null ? "null" : key.toString()) +
+
+[Block 147] UNCHANGED (note: Objects)
+  TEXT: ", value = " + (value == null ? "no value" : value.toString()) + "}";*/
+
+[Block 148] UNCHANGED (note: Objects)
+  TEXT: class GFG{
+
+[Block 149] UNCHANGED (note: Objects)
+  TEXT: public static void main(String[] args){
+
+[Block 150] UNCHANGED (note: Objects)
+  TEXT: PairString, String> p1 = new Pair> ("GFG", "geeksforgeeks.org");
+
+[Block 151] UNCHANGED (note: Objects)
+  TEXT: PairString, String> p2 = new Pair>("Code", null);
+
+[Block 152] UNCHANGED (note: Objects)
+  TEXT: // Pair {key = GFG, value = geeksforgeeks.org}
+
+[Block 153] UNCHANGED (note: Objects)
+  TEXT: // Pair {key = Code, value = no value}
+
+[Block 154] CHANGED (note: Actual/Object Type)
+  ORIGINAL: The Object Type in Java is the actual class of an object as it exists in memory at runtime, determined when it's created with new.  It's the object's true identity and dictates its specific behaviors.  Unlike the Reference type (declared at compile time), the object type is a runtime characteristic used by the JVM for dynamic method dispatch, ensuring the correct overridden method is executed.  You can discover an object's type at runtime using getClass().  Essentially, the object type is the real identity of an object during program execution, enabling polymorphism.
+  FINAL:    The Object Type is an object's true identity in memory.  It is determined at runtime with the new keyword.  This type dictates specific object behaviors.  It differs from the Reference type.  The reference type is declared at compile time.  The object type enables dynamic method dispatch.  This ensures the correct overridden method executes.  You can find an object's type using getClass().  Essentially, it represents the real object identity.
+
+[Block 155] CHANGED (note: Actual/Object Type)
+  ORIGINAL: Determined at Runtime - the object type is established when an object is instantiated (created) during the execution of the program.
+  FINAL:    Determined at Runtime - the object type is set when an object is instantiated. This occurs during program execution.
+
+[Block 156] CHANGED (note: Actual/Object Type)
+  ORIGINAL: The new Keyword: The new keyword followed by a constructor of a specific class determines the object type. For example, new Dog() creates an object whose object type is Dog.
+  FINAL:    The new Keyword: the new keyword is used with a constructor. This action directly determines the object type. For example, new Dog() creates a Dog object.
+
+[Block 157] CHANGED (note: Actual/Object Type)
+  ORIGINAL: Can be a Subclass: An object's type will always be the specific class it was instantiated from. If you create an instance of a subclass, its object type is that subclass, even if you hold a reference to it using a superclass type (this is polymorphism).
+  FINAL:    Can be a Subclass: an object's type is always its instantiation class. Creating a subclass instance makes its type that subclass. This holds true even with a superclass reference, enabling polymorphism.
+
+[Block 158] UNCHANGED (note: Actual/Object Type)
+  TEXT: Object Type
+
+[Block 159] UNCHANGED (note: Declared Type)
+  TEXT: Declared type of a variable is the type that you explicitly specify when you declare the variable.  It's the type that the compiler recognizes and uses during the compilation phase to determine what kinds of values or objects that variable can hold and what operations can be performed on it through that variable. Think of the declared type as the contract or promise you make to the compiler about the nature of the data the variable will refer to.
+
+[Block 160] UNCHANGED (note: Declared Type)
+  TEXT: Declared Type
+
+[Block 161] UNCHANGED (note: Declared Type)
+  TEXT: Actual Type
+
+[Block 162] UNCHANGED (note: Declared Type)
+  TEXT: The type specified in the variable's declaration.
+
+[Block 163] UNCHANGED (note: Declared Type)
+  TEXT: The actual class of the object that the variable currently refers to.
+
+[Block 164] UNCHANGED (note: Declared Type)
+  TEXT: Determined at
+
+[Block 165] UNCHANGED (note: Declared Type)
+  TEXT: Compile time.
+
+[Block 166] UNCHANGED (note: Declared Type)
+  TEXT: Scope of Knowledge
+
+[Block 167] UNCHANGED (note: Declared Type)
+  TEXT: What the compiler knows about the variable's capabilities. Determines which methods can be called at compile time.
+
+[Block 168] UNCHANGED (note: Declared Type)
+  TEXT: What the JVM knows about the object in memory. Determines which method implementation will be executed at runtime (due to polymorphism).
+
+[Block 169] UNCHANGED (note: Declared Type)
+  TEXT: Remains fixed throughout the variable's scope.
+
+[Block 170] UNCHANGED (note: Declared Type)
+  TEXT: Can change at runtime if the variable is reassigned to an object of a different (but compatible) type.
+
+[Block 171] UNCHANGED (note: Declared Type)
+  TEXT: The actual type must be assignment-compatible with the declared type (e.g., it can be the same class, a subclass, or implement the declared interface).
+
+[Block 172] UNCHANGED (note: Declared Type)
+  TEXT: Is always the concrete class of the object in memory.
+
+[Block 173] UNCHANGED (note: Declared Type)
+  TEXT: ListString> myList; (Declared type: ListString>)
+
+[Block 174] UNCHANGED (note: Declared Type)
+  TEXT: myList = new ArrayList>(); (Actual type: ArrayList) lt;br> myList = new LinkedList>(); (Actual type: LinkedList)
+
+[Block 175] UNCHANGED (note: Declared Type)
+  TEXT: Impact on Method Calls
+
+[Block 176] UNCHANGED (note: Declared Type)
+  TEXT: The compiler checks if a method call exists in the declared type (or its supertypes/interfaces). If not, a compile-time error occurs.
+
+[Block 177] UNCHANGED (note: Declared Type)
+  TEXT: The JVM uses the actual type of the object to determine which specific implementation of a method to execute (dynamic dispatch).
+
+[Block 178] UNCHANGED (note: Declared Type)
+  TEXT: Casting might be needed to access methods specific to the actual type that are not present in the declared type. This can lead to ClassCastException at runtime if the cast is invalid.
+
+[Block 179] UNCHANGED (note: Declared Type)
+  TEXT: No casting can change the actual type of an object. Casting only changes how the compiler and runtime treat the object through a different reference.
+
+[Block 180] UNCHANGED (note: Achieve Loose Coupling)
+  TEXT: Program to Interfaces: use interfaces to define contracts, instead of directly referencing concrete classes, by defining the methods that a class should provide.  This allows you to swap implementations without affecting the code that relies on the interface.
+
+[Block 181] UNCHANGED (note: Achieve Loose Coupling)
+  TEXT: Dependency Injection: frameworks help manage dependencies by injecting them into objects, eliminating the need for objects to create their own dependencies.
+
+[Block 182] UNCHANGED (note: Achieve Loose Coupling)
+  TEXT: Design Patterns:
+
+[Block 183] UNCHANGED (note: Achieve Loose Coupling)
+  TEXT: Factory - pattern to create objects without specifying the exact class of the object that will be created.
+
+[Block 184] UNCHANGED (note: Achieve Loose Coupling)
+  TEXT: Observer - pattern to decouple objects by allowing them to communicate through events.
+
+[Block 185] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Copy Constructor
+
+[Block 186] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: A constructor that creates a new object as a copy of an existing object.
+
+[Block 187] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: A method that creates a copy of an object using the Cloneable interface and clone().
+
+[Block 188] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: User-defined within the class.
+
+[Block 189] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Defined in the Object class, must be overridden in the class being cloned.
+
+[Block 190] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Interface Requirement
+
+[Block 191] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: No interface requirement.
+
+[Block 192] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Requires implementing the Cloneable interface.
+
+[Block 193] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Exception Handling
+
+[Block 194] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: No special exception handling needed.
+
+[Block 195] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Must handle CloneNotSupportedException.
+
+[Block 196] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Slightly slower due to object creation via constructor.
+
+[Block 197] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Generally faster as it's a native method but depends on the implementation.
+
+[Block 198] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Provides clear and explicit control over the copying process.
+
+[Block 199] UNCHANGED (note: Copy Constructor vs clone())
+  TEXT: Convenient copies of objects, especially ones with complex object structures.
+
+[Block 200] UNCHANGED (note: Cohesion)
+  TEXT: Cohesion refers to the extent to which a class is defined to do a specific specialized task.  A class created with high cohesion is targeted towards a single specific purpose, rather than performing many different specific purposes.
+
+[Block 201] UNCHANGED (note: Cohesion)
+  TEXT: High Cohesion (good) - a class that is designed to do one specific purpose.
+
+[Block 202] UNCHANGED (note: Cohesion)
+  TEXT: Low Cohesion (bad) - a class designed to do multiple things, this requires a lot of modifications for a small change.
+
+[Block 203] UNCHANGED (note: Cohesion)
+  TEXT: High Cohesion
+
+[Block 204] UNCHANGED (note: Cohesion)
+  TEXT: Low Cohesion
+
+[Block 205] UNCHANGED (note: Cohesion)
+  TEXT: Components within a program are strongly related and focused on performing a single task or functionality.
+
+[Block 206] UNCHANGED (note: Cohesion)
+  TEXT: Components within a program are less related and may perform multiple unrelated tasks.
+
+[Block 207] UNCHANGED (note: Cohesion)
+  TEXT: Components work closely together to achieve a specific and well-defined functionality or purpose.
+
+[Block 208] UNCHANGED (note: Cohesion)
+  TEXT: Components may handle various functionalities or tasks that are not closely related to each other.
+
+[Block 209] UNCHANGED (note: Cohesion)
+  TEXT: Improved readability and maintainability.
+
+[Block 210] UNCHANGED (note: Cohesion)
+  TEXT: Easier testing, debugging, and understanding of the microservice.
+
+[Block 211] UNCHANGED (note: Cohesion)
+  TEXT: Encourages reusability of components.
+
+[Block 212] UNCHANGED (note: Cohesion)
+  TEXT: Enhances scalability and modifiability.
+
+[Block 213] UNCHANGED (note: Cohesion)
+  TEXT: Flexibility to accommodate different functionalities within the microservice.
+
+[Block 214] UNCHANGED (note: Cohesion)
+  TEXT: Can accommodate changes without affecting other components heavily.
+
+[Block 215] UNCHANGED (note: Cohesion)
+  TEXT: May require additional effort to refactor or modify when functionality changes.
+
+[Block 216] UNCHANGED (note: Cohesion)
+  TEXT: Potential risk of over-engineering if granularity is too fine.
+
+[Block 217] UNCHANGED (note: Cohesion)
+  TEXT: Decreased clarity and understanding of the microservice.
+
+[Block 218] UNCHANGED (note: Cohesion)
+  TEXT: Increased complexity and potential for confusion.
+
+[Block 219] UNCHANGED (note: Cohesion)
+  TEXT: Reduced predictability and reliability.
+
+[Block 220] UNCHANGED (note: Cohesion)
+  TEXT: A microservice responsible for user authentication and authorization, where all components are focused on user authentication processes.
+
+[Block 221] UNCHANGED (note: Cohesion)
+  TEXT: A microservice responsible for user management, where components handle user authentication, profile management, and email notifications without clear separation of concerns.
+
+[Block 222] UNCHANGED (note: Coupling)
+  TEXT: Coupling describes the degree in which classes within our system depend on each other.
+
+[Block 223] UNCHANGED (note: Coupling)
+  TEXT: Loose Coupling (good) - the number of relationships among all our classes needs to be as low as possible.
+
+[Block 224] UNCHANGED (note: Coupling)
+  TEXT: Tight Coupling (bad) - code is hard to maintain.
+
+[Block 225] UNCHANGED (note: Coupling)
+  TEXT: Loose Coupling
+
+[Block 226] UNCHANGED (note: Coupling)
+  TEXT: Tight Coupling
+
+[Block 227] UNCHANGED (note: Coupling)
+  TEXT: Weak interdependence between classes.
+
+[Block 228] UNCHANGED (note: Coupling)
+  TEXT: Strong interdependence between classes.
+
+[Block 229] UNCHANGED (note: Coupling)
+  TEXT: One class have limited impact on other classes.
+
+[Block 230] UNCHANGED (note: Coupling)
+  TEXT: One class often requires changes in multiple classes.
+
+[Block 231] UNCHANGED (note: Coupling)
+  TEXT: High; easier to modify or extend
+
+[Block 232] UNCHANGED (note: Coupling)
+  TEXT: Low; difficult to modify or extend
+
+[Block 233] UNCHANGED (note: Coupling)
+  TEXT: Easier to isolate and test individual classes.
+
+[Block 234] UNCHANGED (note: Coupling)
+  TEXT: Difficult to isolate and test individual classes.
+
+[Block 235] UNCHANGED (note: Coupling)
+  TEXT: Common Scenarios
+
+[Block 236] UNCHANGED (note: Coupling)
+  TEXT: Modern software design, modularity, and maintainability that allow for dependency inversion.
+
+[Block 237] UNCHANGED (note: Coupling)
+  TEXT: Legacy code, tightly integrated systems.  Objects are directly instantiated within other classes
+
+[Block 238] UNCHANGED (note: Wrapper Object)
+  TEXT: A wrapper object is an instance of a Java wrapper class, designed to encapsulate a primitive data type within an object.  This object representation allows primitive values to participate in object-oriented contexts, such as being stored in collections that only handle objects or representing the absence of a value using null.  Each wrapper object holds a single field of its corresponding primitive type, effectively providing a bridge between Java's primitive data types and its object-oriented nature.  For example, an Integer wrapper object contains an int value.  Java often handles the conversion between primitive types and their wrapper objects automatically through a process called autoboxing and unboxing, simplifying their usage.
+
+[Block 239] UNCHANGED (note: Wrapper Object)
+  TEXT: Immutable - can reuse the reference without worrying about it changing.
+
+[Block 240] UNCHANGED (note: Wrapper Object)
+  TEXT: final - keyword so the class can not be extended.
+
+[Block 241] UNCHANGED (note: Wrapper Object)
+  TEXT: Wrap Objects:
+
+[Block 242] UNCHANGED (note: Wrapper Object)
+  TEXT: valueOf() - the static method, will use a cached value instead of creating a new object if the cached value is in the memory.
+
+[Block 243] UNCHANGED (note: Wrapper Object)
+  TEXT: new - keyword which will always create a new object.
+
+[Block 244] UNCHANGED (note: Wrapper Object)
+  TEXT: Ex) Wrapping an int with the value of 10 into an Integer.
+
+[Block 245] UNCHANGED (note: Enum)
+  TEXT: Enums in Java offer a mechanism to define a type with a predetermined set of named constants, enhancing code readability and type safety.  The Java compiler automatically equips enums with several utility methods, notably the values() method, which returns an array containing all the enum constants in the order they were declared, simplifying iteration over the enum's values.  Enums can also include constructors, enabling the association of specific data with each enum constant, thereby enriching their representational capabilities.  Given that each enum constant is guaranteed to be a unique instance, the == operator can be safely and efficiently used for reference comparison instead of the equals() method.  Furthermore, enums inherently possess immutability and prevent cloning, ensuring consistent behavior and preventing unintended modifications.  While enums implicitly extend java.lang.Enum, they cannot be explicitly extended through inheritance, reinforcing their fixed and well-defined nature.
+
+[Block 246] UNCHANGED (note: Enum)
+  TEXT: Enum Type - refers to the actual enumerated type created using the enum keyword.  It is the blueprint that defines all the constants.
+
+[Block 247] UNCHANGED (note: Enum)
+  TEXT: Enum Constants - refers to the values of the type.
+
+[Block 248] UNCHANGED (note: Enum)
+  TEXT: ordinal() - returns the position of this enumeration constant from the enum.
+
+[Block 249] UNCHANGED (note: Enum)
+  TEXT: Properties: since they are immutable.
+
+[Block 250] UNCHANGED (note: Enum)
+  TEXT: No Instantiation
+
+[Block 251] UNCHANGED (note: Enum)
+  TEXT: No Cloning
+
+[Block 252] UNCHANGED (note: Enum)
+  TEXT: Ex) Planet, the enum type, has methods that allow you to retrieve the surface gravity and weight of an object on each planet, the enum constants, like MERCURY (3.303e+23, 2.4397e6).
+
+[Block 253] UNCHANGED (note: Enum)
+  TEXT: public enum Planet {     MERCURY (3.303e+23, 2.4397e6),     VENUS (4.869e+24, 6.0518e6),     EARTH (5.976e+24, 6.37814e6),     MARS (6.421e+23, 3.3972e6),     JUPITER (1.9e+27, 7.1492e7),     SATURN (5.688e+26, 6.0268e7),     URANUS (8.686e+25, 2.5559e7),     NEPTUNE (1.024e+26, 2.4746e7);         private final double mass; // in kilograms     private final double radius; // in meters     Planet(double mass, double radius) {         this.mass = mass;         this.radius = radius;     }     private double mass() {         return mass;      }     private double radius() {         return radius;      }//---- Looping through an enum.for (Planet p : Planet.values()) {    System.out.printf("Your weight on %s is %f%n",                      p, p.surfaceWeight(mass));}//---- Using a range with the for loop.for (Planet p : EnumSet.range(from, to)) {
+
+[Block 254] UNCHANGED (note: Enum)
+  TEXT: public enum Planet {
+
+[Block 255] UNCHANGED (note: Enum)
+  TEXT: MERCURY (3.303e+23, 2.4397e6),
+
+[Block 256] UNCHANGED (note: Enum)
+  TEXT: VENUS (4.869e+24, 6.0518e6),
+
+[Block 257] UNCHANGED (note: Enum)
+  TEXT: EARTH (5.976e+24, 6.37814e6),
+
+[Block 258] UNCHANGED (note: Enum)
+  TEXT: MARS (6.421e+23, 3.3972e6),
+
+[Block 259] UNCHANGED (note: Enum)
+  TEXT: JUPITER (1.9e+27, 7.1492e7),
+
+[Block 260] UNCHANGED (note: Enum)
+  TEXT: SATURN (5.688e+26, 6.0268e7),
+
+[Block 261] UNCHANGED (note: Enum)
+  TEXT: URANUS (8.686e+25, 2.5559e7),
+
+[Block 262] UNCHANGED (note: Enum)
+  TEXT: NEPTUNE (1.024e+26, 2.4746e7);
+
+[Block 263] UNCHANGED (note: Enum)
+  TEXT: private final double mass; // in kilograms
+
+[Block 264] UNCHANGED (note: Enum)
+  TEXT: private final double radius; // in meters
+
+[Block 265] UNCHANGED (note: Enum)
+  TEXT: Planet(double mass, double radius) {
+
+[Block 266] UNCHANGED (note: Enum)
+  TEXT: this.mass = mass;
+
+[Block 267] UNCHANGED (note: Enum)
+  TEXT: this.radius = radius;
+
+[Block 268] UNCHANGED (note: Enum)
+  TEXT: private double mass() {
+
+[Block 269] UNCHANGED (note: Enum)
+  TEXT: return mass;
+
+[Block 270] UNCHANGED (note: Enum)
+  TEXT: private double radius() {
+
+[Block 271] UNCHANGED (note: Enum)
+  TEXT: return radius;
+
+[Block 272] UNCHANGED (note: Enum)
+  TEXT: //---- Looping through an enum.
+
+[Block 273] UNCHANGED (note: Enum)
+  TEXT: for (Planet p : Planet.values()) {
+
+[Block 274] UNCHANGED (note: Enum)
+  TEXT: System.out.printf("Your weight on %s is %f%n",
+
+[Block 275] UNCHANGED (note: Enum)
+  TEXT: p, p.surfaceWeight(mass));
+
+[Block 276] UNCHANGED (note: Enum)
+  TEXT: //---- Using a range with the for loop.
+
+[Block 277] UNCHANGED (note: Enum)
+  TEXT: for (Planet p : EnumSet.range(from, to)) {
+
+[Block 278] UNCHANGED (note: Static Member Access)
+  TEXT: Java's static member access involves interacting with variables and methods declared with the static keyword, which are associated with the class itself rather than any specific object instance.  The conventional and recommended way to access these class-level members is by using the class name followed by the dot operator.  While it is syntactically possible to access static members through an object reference, this practice is generally discouraged as it can obscure the fact that the member belongs to the class, not the object.  Static variables are shared across all instances of the class, meaning any modification to a static variable by one object will be reflected in all other objects of the same class.  Static methods, which can be invoked directly on the class without the need to create an object, have a limitation: they can only directly access other static members of the same class.  Static members are particularly useful for implementing utility functions, defining constants that are shared across all instances, and managing resources that are common to the entire class.  However, an overreliance on static members can potentially reduce the benefits of object-oriented programming principles by emphasizing class-level behavior over instance-specific behavior.  A key restriction to remember is that static methods cannot directly access non-static instance variables or methods, as these are tied to specific object states.
+
+[Block 279] UNCHANGED (note: Static Member Access)
+  TEXT: Ex) What happens internally.
+
+[Block 280] UNCHANGED (note: Reference)
+  TEXT: A reference variable in Java does not store the object's data directly; instead, it holds the memory address where the object is located on the Heap.  Simply declaring a reference variable only establishes a pointer, and the actual object in memory must be created through a separate instantiation process using the new keyword.  Reference types in Java encompass classes, arrays, interfaces, and certain other specialized types.  In contrast to primitive types, which store their values directly in memory, reference types offer an indirect means of accessing objects.  This indirect means is fundamental to Java's dynamic memory management and its support for object-oriented programming principles.
+
+[Block 281] UNCHANGED (note: Reference)
+  TEXT: Class - a set of instructions for object creation.
+
+[Block 282] UNCHANGED (note: Reference)
+  TEXT: Array - fixed-size data structure that stores the elements of the same type.
+
+[Block 283] UNCHANGED (note: Reference)
+  TEXT: Annotations - a way to associate metadata with program elements.
+
+[Block 284] UNCHANGED (note: Reference)
+  TEXT: Interface - referred to as programming by contract.
+
+[Block 285] UNCHANGED (note: Reference)
+  TEXT: Enums - a special kind of class that is type-safe.
+
+[Block 286] UNCHANGED (note: Reference)
+  TEXT: Ex) D1 as the reference for the Demo object.
+
+[Block 287] UNCHANGED (note: Reference)
+  TEXT: class Demo {   int x = 10;   int display() {      System.out.println("x = " + x);      return 0;   }}class Main {   public static void main(String[] args) {      Demo D1 = new Demo();
+
+[Block 288] UNCHANGED (note: Reference)
+  TEXT: class Demo {
+
+[Block 289] UNCHANGED (note: Reference)
+  TEXT: int x = 10;
+
+[Block 290] UNCHANGED (note: Reference)
+  TEXT: int display() {
+
+[Block 291] UNCHANGED (note: Reference)
+  TEXT: System.out.println("x = " + x);
+
+[Block 292] UNCHANGED (note: Reference)
+  TEXT: return 0;
+
+[Block 293] UNCHANGED (note: Reference)
+  TEXT: class Main {
+
+[Block 294] UNCHANGED (note: Reference)
+  TEXT: public static void main(String[] args) {
+
+[Block 295] UNCHANGED (note: Reference)
+  TEXT: Demo D1 = new Demo();
+
+[Block 296] UNCHANGED (note: Cloneable)
+  TEXT: Cloneable in Java is indeed a marker interface, distinguished by its lack of declared methods.  Its exclusive function is to serve as a signal to the Java Virtual Machine (JVM) that a class allows its instances to be copied on a field-by-field basis through the Object.clone() method.  By implementing Cloneable, a class explicitly informs the JVM that it is permissible to perform a shallow copy of its objects.  Conversely, attempting to call the clone() method on an object of a class that does not implement Cloneable will result in a CloneNotSupportedException being thrown.  It's important to note that Cloneable itself does not define the clone() method's implementation; it merely acts as a permission slip that enables the inherited Object.clone() method to be invoked without raising an exception.  Furthermore, the Object.clone() method performs a shallow copy, meaning that while primitive fields are duplicated, reference fields are simply copied, leading to both the original and the cloned object pointing to the same inner objects.  For creating independent copies of objects with complex object graphs, a Deep Copy mechanism needs to be implemented explicitly.
+
+[Block 297] UNCHANGED (note: Cloneable)
+  TEXT: class A implements Cloneable {   int i;   String s;   // A class constructor    public A(int i, String s) {      this.i = i;      this.s = s;   }   // Overriding clone() method    // by simply calling Object class    // clone() method.    @Override   protected Object clone()   throws CloneNotSupportedException {      return super.clone();   }}public static void main(String[] args) throws CloneNotSupportedException {   A a = new A(20, "GeeksForGeeks");   // cloning 'a' and holding    // new cloned object reference in b    // down-casting as clone() return type is Object    A b = (A) a.clone();   System.out.println(b.i);   System.out.println(b.s);}// 20// GeeksForGeeks
+
+[Block 298] UNCHANGED (note: Cloneable)
+  TEXT: class A implements Cloneable {
+
+[Block 299] UNCHANGED (note: Cloneable)
+  TEXT: int i;
+
+[Block 300] UNCHANGED (note: Cloneable)
+  TEXT: String s;
+
+[Block 301] UNCHANGED (note: Cloneable)
+  TEXT: // A class constructor
+
+[Block 302] UNCHANGED (note: Cloneable)
+  TEXT: public A(int i, String s) {
+
+[Block 303] UNCHANGED (note: Cloneable)
+  TEXT: this.i = i;
+
+[Block 304] UNCHANGED (note: Cloneable)
+  TEXT: this.s = s;
+
+[Block 305] UNCHANGED (note: Cloneable)
+  TEXT: // Overriding clone() method
+
+[Block 306] UNCHANGED (note: Cloneable)
+  TEXT: // by simply calling Object class
+
+[Block 307] UNCHANGED (note: Cloneable)
+  TEXT: // clone() method.
+
+[Block 308] UNCHANGED (note: Cloneable)
+  TEXT: protected Object clone()
+
+[Block 309] UNCHANGED (note: Cloneable)
+  TEXT: throws CloneNotSupportedException {
+
+[Block 310] UNCHANGED (note: Cloneable)
+  TEXT: return super.clone();
+
+[Block 311] UNCHANGED (note: Cloneable)
+  TEXT: public static void main(String[] args) throws CloneNotSupportedException {
+
+[Block 312] UNCHANGED (note: Cloneable)
+  TEXT: A a = new A(20, "GeeksForGeeks");
+
+[Block 313] UNCHANGED (note: Cloneable)
+  TEXT: // cloning 'a' and holding
+
+[Block 314] UNCHANGED (note: Cloneable)
+  TEXT: // new cloned object reference in b
+
+[Block 315] UNCHANGED (note: Cloneable)
+  TEXT: // down-casting as clone() return type is Object
+
+[Block 316] UNCHANGED (note: Cloneable)
+  TEXT: A b = (A) a.clone();
+
+[Block 317] UNCHANGED (note: Cloneable)
+  TEXT: // 20
+
+[Block 318] UNCHANGED (note: Cloneable)
+  TEXT: // GeeksForGeeks
+
+[Block 319] UNCHANGED (note: new vs newInstance())
+  TEXT: new Keyword
+
+[Block 320] UNCHANGED (note: new vs newInstance())
+  TEXT: Object Creation
+
+[Block 321] UNCHANGED (note: new vs newInstance())
+  TEXT: Creation Mechanism
+
+[Block 322] UNCHANGED (note: new vs newInstance())
+  TEXT: Language keyword for direct object instantiation.
+
+[Block 323] UNCHANGED (note: new vs newInstance())
+  TEXT: Method call that uses reflection to create an object.
+
+[Block 324] UNCHANGED (note: new vs newInstance())
+  TEXT: Compile-time Checking
+
+[Block 325] UNCHANGED (note: new vs newInstance())
+  TEXT: Strong type checking at compile time.
+
+[Block 326] UNCHANGED (note: new vs newInstance())
+  TEXT: Limited or no compile-time checking. Potential for runtime exceptions.
+
+[Block 327] UNCHANGED (note: new vs newInstance())
+  TEXT: Checked Exceptions
+
+[Block 328] UNCHANGED (note: new vs newInstance())
+  TEXT: No checked exceptions are directly thrown by new.
+
+[Block 329] UNCHANGED (note: new vs newInstance())
+  TEXT: Can throw InstantiationException and IllegalAccessException (checked exceptions).
+
+[Block 330] UNCHANGED (note: new vs newInstance())
+  TEXT: Less flexible; constructor to be called is fixed at compile time.
+
+[Block 331] UNCHANGED (note: new vs newInstance())
+  TEXT: More flexible; class and constructor can be determined at runtime (e.g., based on configuration).
+
+[Block 332] UNCHANGED (note: new vs newInstance())
+  TEXT: Works seamlessly with generics.
+
+[Block 333] UNCHANGED (note: new vs newInstance())
+  TEXT: Requires careful casting and handling of generic type information, which can be erased at runtime.
+
+[Block 334] UNCHANGED (note: new vs newInstance())
+  TEXT: Use Cases
+
+[Block 335] UNCHANGED (note: new vs newInstance())
+  TEXT: Standard object creation when the class and constructor are known at compile time.
+
+[Block 336] UNCHANGED (note: new vs newInstance())
+  TEXT: Creating instances of classes whose names are not known until runtime (e.g., plugins, frameworks), invoking non-public constructors.
+
+[Block 337] UNCHANGED (note: EnumSet)
+  TEXT: EnumSet in Java is a specialized and highly optimized Set implementation exclusively intended for use with enum types.  A fundamental constraint of EnumSet is that all elements it contains must originate from a single enum type, a characteristic determined at the time of the set's creation.  The exceptional efficiency of EnumSet stems from its internal design, which utilizes arithmetic bitwise operations to implement all of its methods.  These bitwise manipulations are inherently very fast, enabling constant-time performance for all core operations such as addition, removal, containment checks, and iteration.  Furthermore, EnumSet prohibits the inclusion of null elements, ensuring type safety and preventing potential NullPointerExceptions.  Due to its performance characteristics and type-safe nature, EnumSet is the preferred Set implementation when dealing with collections of enum constants.  They offer significant speed advantages over more general-purpose Set implementations like HashSet or TreeSet in such scenarios.
+
+[Block 338] UNCHANGED (note: EnumSet)
+  TEXT: of() - creates an enum set initially containing the specified element.
+
+[Block 339] UNCHANGED (note: EnumSet)
+  TEXT: range() - creates an enum set initially containing all of the elements in the range defined by the two specified endpoints.
+
+[Block 340] UNCHANGED (note: EnumSet)
+  TEXT: Ex) EnumSet.complementOf(set1) creates an EnumSet containing all the enum constants from the Gfgf enum that are not present in set1. In this case, only MCQ is missing from set1. EnumSet.allOf(Gfgf.class)creates an EnumSet containing all the constants defined in the Gfgf enum: CODE, LEARN, CONTRIBUTE, QUIZ, and MCQ.
+
+[Block 341] UNCHANGED (note: EnumSet)
+  TEXT: enum Gfgf {   CODE,   LEARN,   CONTRIBUTE,   QUIZ,   MCQ};public class GFG {   // Main driver method    public static void main(String[] args) {      // Creating a set       EnumSetGfgf> set1, set2, set3, set4;      // Adding elements       set1 = EnumSet.of(Gfgf.QUIZ, Gfgf.CONTRIBUTE,Gfgf.LEARN, Gfgf.CODE);      set2 = EnumSet.complementOf(set1);      set3 = EnumSet.allOf(Gfgf.class);      set4 = EnumSet.range(Gfgf.CODE, Gfgf.CONTRIBUTE);      // Printing corresponding elements in Sets       System.out.println("Set 1: " + set1);      System.out.println("Set 2: " + set2);      System.out.println("Set 3: " + set3);      System.out.println("Set 4: " + set4);   }}
+
+[Block 342] UNCHANGED (note: EnumSet)
+  TEXT: enum Gfgf {
+
+[Block 343] UNCHANGED (note: EnumSet)
+  TEXT: public class GFG {
+
+[Block 344] UNCHANGED (note: EnumSet)
+  TEXT: // Main driver method
+
+[Block 345] UNCHANGED (note: EnumSet)
+  TEXT: public static void main(String[] args) {
+
+[Block 346] UNCHANGED (note: EnumSet)
+  TEXT: // Creating a set
+
+[Block 347] UNCHANGED (note: EnumSet)
+  TEXT: EnumSetGfgf> set1, set2, set3, set4;
+
+[Block 348] UNCHANGED (note: EnumSet)
+  TEXT: // Adding elements
+
+[Block 349] UNCHANGED (note: EnumSet)
+  TEXT: set1 = EnumSet.of(Gfgf.QUIZ, Gfgf.CONTRIBUTE,Gfgf.LEARN, Gfgf.CODE);
+
+[Block 350] UNCHANGED (note: EnumSet)
+  TEXT: set2 = EnumSet.complementOf(set1);
+
+[Block 351] UNCHANGED (note: EnumSet)
+  TEXT: set3 = EnumSet.allOf(Gfgf.class);
+
+[Block 352] UNCHANGED (note: EnumSet)
+  TEXT: set4 = EnumSet.range(Gfgf.CODE, Gfgf.CONTRIBUTE);
+
+[Block 353] UNCHANGED (note: EnumSet)
+  TEXT: // Printing corresponding elements in Sets
+
+[Block 354] UNCHANGED (note: EnumSet)
+  TEXT: System.out.println("Set 1: " + set1);
+
+[Block 355] UNCHANGED (note: EnumSet)
+  TEXT: System.out.println("Set 2: " + set2);
+
+[Block 356] UNCHANGED (note: EnumSet)
+  TEXT: System.out.println("Set 3: " + set3);
+
+[Block 357] UNCHANGED (note: EnumSet)
+  TEXT: System.out.println("Set 4: " + set4);
+
+[Block 358] UNCHANGED (note: Deep Comparison)
+  TEXT: Deep Comparison is when a class provides its own implementation of the equals() by overriding it.  The data members (i.e. fields) of Objects are to be compared with one another.  Such Comparison based on data members is known as deep comparison.
+
+[Block 359] UNCHANGED (note: Deep Comparison)
+  TEXT: A deep comparison between two objects goes beyond simply checking if their memory addresses are the same. Instead, it recursively compares the actual content or state of the objects and all the objects they contain. If two objects and all their nested objects have the same values for all their corresponding fields, then a deep comparison will consider them equal.
+
+[Block 360] UNCHANGED (note: Deep Comparison)
+  TEXT: equals() - follow the general contract of equals() and hashCode().
+
+[Block 361] UNCHANGED (note: Deep Comparison)
+  TEXT: Objects.deepEquals() - for deep comparison especially with nested arrays or objects.
+
+[Block 362] UNCHANGED (note: Deep Comparison)
+  TEXT: Apache Commons - EqualsBuilder is designed for deep comparisons of fields.
+
+[Block 363] UNCHANGED (note: Deep Comparison)
+  TEXT: Compares Object Content - it examines the values of the primitive-type fields directly.
+
+[Block 364] UNCHANGED (note: Deep Comparison)
+  TEXT: Recursively Compares Reference-Type Fields - when it encounters a field that is an object reference, it doesn't just compare the references.  Instead, it recursively calls a comparison method (often equals()) on the referenced objects to compare their content as well.  This process continues down through all levels of nested objects.
+
+[Block 365] UNCHANGED (note: Deep Comparison)
+  TEXT: Requires Custom Implementation - deep comparison typically requires a custom implementation of an equality checking method (like overriding the equals() method in Java) that explicitly defines how the objects and their constituent parts should be compared.
+
+[Block 366] UNCHANGED (note: Deep Comparison)
+  TEXT: public class MyClass {    private int id;    private String name;    private MyNestedClass nested;    // Constructor, getters, setters...    @Override    public boolean equals(Object obj) {        if (this == obj)            return true;        if (obj == null || getClass() != obj.getClass())            return false;        MyClass other = (MyClass) obj;        return id == other.id  Objects.equals(name, other.name)                  Objects.equals(nested, other.nested);    }}
+
+[Block 367] UNCHANGED (note: Deep Comparison)
+  TEXT: public class MyClass {
+
+[Block 368] UNCHANGED (note: Deep Comparison)
+  TEXT: private int id;
+
+[Block 369] UNCHANGED (note: Deep Comparison)
+  TEXT: private String name;
+
+[Block 370] UNCHANGED (note: Deep Comparison)
+  TEXT: private MyNestedClass nested;
+
+[Block 371] UNCHANGED (note: Deep Comparison)
+  TEXT: // Constructor, getters, setters...
+
+[Block 372] UNCHANGED (note: Deep Comparison)
+  TEXT: public boolean equals(Object obj) {
+
+[Block 373] UNCHANGED (note: Deep Comparison)
+  TEXT: if (this == obj)
+
+[Block 374] UNCHANGED (note: Deep Comparison)
+  TEXT: return true;
+
+[Block 375] UNCHANGED (note: Deep Comparison)
+  TEXT: if (obj == null || getClass() != obj.getClass())
+
+[Block 376] UNCHANGED (note: Deep Comparison)
+  TEXT: return false;
+
+[Block 377] UNCHANGED (note: Deep Comparison)
+  TEXT: MyClass other = (MyClass) obj;
+
+[Block 378] UNCHANGED (note: Deep Comparison)
+  TEXT: return id == other.id  Objects.equals(name, other.name)
+
+[Block 379] UNCHANGED (note: Deep Comparison)
+  TEXT: Objects.equals(nested, other.nested);
+
+[Block 380] UNCHANGED (note: Object - Creation)
+  TEXT: The process of object creation involves instantiating a class, which serves as a blueprint.  This instantiation yields an object, a concrete representation of that class.  An object is an instance of a class, and it represents a specific entity with a state (attributes/fields) and behavior (methods).
+
+[Block 381] UNCHANGED (note: Object - Creation)
+  TEXT: Point originOne = new Point(23, 94);
+
+[Block 382] UNCHANGED (note: Object - Creation)
+  TEXT: Declaration - the code in red declares a reference variable originOne of the desired class type Point.
+
+[Block 383] UNCHANGED (note: Object - Creation)
+  TEXT: Instantiation - the new keyword allocates space on the heap for a Point object.
+
+[Block 384] UNCHANGED (note: Object - Creation)
+  TEXT: Initialization - the new operator is followed by a call to a constructor Point(23, 94), which initializes the new object.
+
+[Block 385] UNCHANGED (note: Anonymous Object)
+  TEXT: As its name implies, an anonymous object is an instance of a class created without assigning it a specific variable name.  These objects are generally instantiated and utilized directly at the point of their creation, frequently as arguments passed to method calls.  This technique allows for more concise code by eliminating the necessity of declaring a separate variable to hold the object when its use is confined to a single, immediate action.  Essentially, it provides a mechanism to create and employ an object without establishing a persistent reference to it.
+
+[Block 386] UNCHANGED (note: Anonymous Object)
+  TEXT: Ex) This Message object is anonymous because we haven't assigned it to any variable. It is created, its constructor is executed, and it's immediately passed to the printMessage() method. After the printMessage() method finishes executing, there's no way to refer back to that specific Message object instance because we never stored a reference to it.
+
+[Block 387] UNCHANGED (note: Anonymous Object)
+  TEXT: class MessagePrinter {    public void printMessage(Message message) {        System.out.println("Message: " + message.getText());    }}class Message {    private String text;    public Message(String text) {        this.text = text;    }    public String getText() {        return text;    }}public class AnonymousObjectExample {    public static void main(String[] args) {        MessagePrinter printer = new MessagePrinter();        // Creating and passing an anonymous Message object to the printMessage method        printer.printMessage(new Message("Hello from anonymous object!"));        // We cannot reuse the created Message object here directly        // because we don't have a reference variable for it.        // If we needed to use the Message object again, we would have to        // create a named reference:        Message namedMessage = new Message("This message has a name.");        printer.printMessage(namedMessage);        System.out.println(namedMessage.getText()); // We can now access it.    }}
+
+[Block 388] UNCHANGED (note: Anonymous Object)
+  TEXT: class MessagePrinter {
+
+[Block 389] UNCHANGED (note: Anonymous Object)
+  TEXT: public void printMessage(Message message) {
+
+[Block 390] UNCHANGED (note: Anonymous Object)
+  TEXT: System.out.println("Message: " + message.getText());
+
+[Block 391] UNCHANGED (note: Anonymous Object)
+  TEXT: class Message {
+
+[Block 392] UNCHANGED (note: Anonymous Object)
+  TEXT: private String text;
+
+[Block 393] UNCHANGED (note: Anonymous Object)
+  TEXT: public Message(String text) {
+
+[Block 394] UNCHANGED (note: Anonymous Object)
+  TEXT: this.text = text;
+
+[Block 395] UNCHANGED (note: Anonymous Object)
+  TEXT: public String getText() {
+
+[Block 396] UNCHANGED (note: Anonymous Object)
+  TEXT: return text;
+
+[Block 397] UNCHANGED (note: Anonymous Object)
+  TEXT: public class AnonymousObjectExample {
+
+[Block 398] UNCHANGED (note: Anonymous Object)
+  TEXT: public static void main(String[] args) {
+
+[Block 399] UNCHANGED (note: Anonymous Object)
+  TEXT: MessagePrinter printer = new MessagePrinter();
+
+[Block 400] UNCHANGED (note: Anonymous Object)
+  TEXT: // Creating and passing an anonymous Message object to the printMessage method
+
+[Block 401] UNCHANGED (note: Anonymous Object)
+  TEXT: printer.printMessage(new Message("Hello from anonymous object!"));
+
+[Block 402] UNCHANGED (note: Anonymous Object)
+  TEXT: // We cannot reuse the created Message object here directly
+
+[Block 403] UNCHANGED (note: Anonymous Object)
+  TEXT: // because we don't have a reference variable for it.
+
+[Block 404] UNCHANGED (note: Anonymous Object)
+  TEXT: // If we needed to use the Message object again, we would have to
+
+[Block 405] UNCHANGED (note: Anonymous Object)
+  TEXT: // create a named reference:
+
+[Block 406] UNCHANGED (note: Anonymous Object)
+  TEXT: Message namedMessage = new Message("This message has a name.");
+
+[Block 407] UNCHANGED (note: Anonymous Object)
+  TEXT: System.out.println(namedMessage.getText()); // We can now access it.
+
+[Block 408] UNCHANGED (note: Object State vs Behavior)
+  TEXT: The set of values held by an object's fields at a specific point in time.
+
+[Block 409] UNCHANGED (note: Object State vs Behavior)
+  TEXT: The actions or operations that an object can perform, defined by its methods.
+
+[Block 410] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Represented by the object's instance variables (fields).
+
+[Block 411] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Represented by the object's methods.
+
+[Block 412] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Descriptive; it is the data the object holds.
+
+[Block 413] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Action-oriented; it's what the object can do.
+
+[Block 414] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Can change over the object's lifetime through method calls.
+
+[Block 415] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Remains relatively constant (the methods themselves don't typically change at runtime for a given class).
+
+[Block 416] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Influences and is influenced by object behavior.
+
+[Block 417] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Operates on the object's state and can interact with other objects.
+
+[Block 418] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Analogy (Car)
+
+[Block 419] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Color, speed, fuel level, engine status.
+
+[Block 420] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Accelerate, brake, turn on, turn off.
+
+[Block 421] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Analogy (Bank Account)
+
+[Block 422] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Balance, account holder name, account number.
+
+[Block 423] UNCHANGED (note: Object State vs Behavior)
+  TEXT: Deposit, withdraw, get balance.
+
+[Block 424] UNCHANGED (note: Object State vs Behavior)
+  TEXT: What an object knows.
+
+[Block 425] UNCHANGED (note: Object State vs Behavior)
+  TEXT: What an object can do.
+
+[Block 426] UNCHANGED (note: Object - Behavior)
+  TEXT: Behavior in object-oriented programming describes the actions or operations that objects can perform.  This behavior is defined through methods, which are functions associated with a specific class or object.  To execute an object's methods, an instance of that object must first be created. In contrast, class methods, which are static, can be invoked directly using the class name followed by the method name (e.g., Class.methodToRun()).  Methods serve to encapsulate the functionality that objects expose to other parts of the program, effectively defining how objects interact with their environment.
+
+[Block 427] UNCHANGED (note: Object - Behavior)
+  TEXT: OOPs: how methods interact with other objects.
+
+[Block 428] UNCHANGED (note: Object - Behavior)
+  TEXT: Defined by Methods - the methods of a class dictate what actions its objects can take.  These methods contain the logic and instructions that are executed when the method is called on an object instance.
+
+[Block 429] UNCHANGED (note: Object - Behavior)
+  TEXT: Operating on State - object behavior often involves interacting with the object's state, which is represented by its fields (instance variables).  Methods can access and modify the values of these fields, thus changing the object's internal state.
+
+[Block 430] UNCHANGED (note: Object - Behavior)
+  TEXT: Interaction with Other Objects - objects don't typically exist in isolation.  Their behavior often involves interacting with other objects by calling their methods or accessing their fields.  This collaboration between objects allows for complex program functionality.
+
+[Block 431] UNCHANGED (note: Object - Behavior)
+  TEXT: Methods: are used to house behavior, which are defined within a class.
+
+[Block 432] UNCHANGED (note: Object - Behavior)
+  TEXT: Static - goes with classes.
+
+[Block 433] UNCHANGED (note: Object - Behavior)
+  TEXT: Instance - goes with objects.
+
+[Block 434] UNCHANGED (note: Object - Copies)
+  TEXT: Domain objects are usually complex.  Making a copy with the root object and composed objects is also not trivial.  There are two ways an object can be copied.
+
+[Block 435] UNCHANGED (note: Object - Copies)
+  TEXT: Shallow Copy - copies the main object, but doesn’t copy the inner objects.  Only references are used for the inner objects.
+
+[Block 436] UNCHANGED (note: Object - Copies)
+  TEXT: Deep Copy - copies the main object and all the inner objects as well.  But in additional, all the objects in the tree are deeply copied.  This is so the copy is independent on any earlier existing object that might ever change.  Then a copy of those objects are also created by calling clone() on them.
+
+[Block 437] UNCHANGED (note: Deep Copy)
+  TEXT: A deep copy operation generates a fully independent replica of an original object, extending to all its nested objects and their respective contents.  This thorough duplication process ensures that modifications made to either the original object or its deep copy remain entirely isolated and do not impact the other.  Fundamentally, a deep copy recursively traverses the entire object graph.  This creates new and distinct instances of all objects encountered, thereby establishing complete independence between the original and the copied structure in memory.  Conversely, a shallow copy, which only duplicates the top-level object and its primitive-type fields, while inner objects are merely referenced in the new copy, leading to shared state.
+
+[Block 438] UNCHANGED (note: Deep Copy)
+  TEXT: Primitive Fields - that is primitive data types (int, float, etc.), the value is copied directly.
+
+[Block 439] UNCHANGED (note: Deep Copy)
+  TEXT: Object References - a new copy of the object is created and referenced, rather than copying the reference to the original object.  This ensures that the copied object is independent of the original object.
+
+[Block 440] UNCHANGED (note: Deep Copy)
+  TEXT: Ex) person2 has its own copy of the Address object.  Changing the city in person2's address does not affect person1's address, because a deep copy was made.
+
+[Block 441] UNCHANGED (note: Deep Copy)
+  TEXT: Address address = new Address("New York");Person person1 = new Person("John", address);// Perform a deep copyPerson person2 = (Person) person1.clone();System.out.println("Person 1: " + person1.address.city);System.out.println("Person 2: " + person2.address.city);person2.address.city = "Los Angeles";System.out.println("Set Person 2 Address: " + person2.address.city);System.out.println("Person 1: " + person1.address.city);System.out.println("Person 2: " + person2.address.city);class Address {    String city;    Address(String city) {        this.city = city;    }        // Copy constructor for deep copy    public Address(Address other) {        this.city = other.city;    }class Person implements Cloneable {    String name;    Address address;        Person(String name, Address address) {        this.name = name;        this.address = address;    }        // Deep copy using the clone method    @Override    protected Object clone() throws CloneNotSupportedException {        Person cloned = (Person) super.clone();        // deep copy of address                cloned.address = new Address(this.address);         return cloned;    }// Person 1: New York// Person 2: New York//// Set Person 2 Address: Los Angeles// Person 1: New York// Person 2: Los Angeles
+
+[Block 442] UNCHANGED (note: Deep Copy)
+  TEXT: Address address = new Address("New York");
+
+[Block 443] UNCHANGED (note: Deep Copy)
+  TEXT: Person person1 = new Person("John", address);
+
+[Block 444] UNCHANGED (note: Deep Copy)
+  TEXT: // Perform a deep copy
+
+[Block 445] UNCHANGED (note: Deep Copy)
+  TEXT: Person person2 = (Person) person1.clone();
+
+[Block 446] UNCHANGED (note: Deep Copy)
+  TEXT: System.out.println("Person 1: " + person1.address.city);
+
+[Block 447] UNCHANGED (note: Deep Copy)
+  TEXT: System.out.println("Person 2: " + person2.address.city);
+
+[Block 448] UNCHANGED (note: Deep Copy)
+  TEXT: person2.address.city = "Los Angeles";
+
+[Block 449] UNCHANGED (note: Deep Copy)
+  TEXT: System.out.println("Set Person 2 Address: " + person2.address.city);
+
+[Block 450] UNCHANGED (note: Deep Copy)
+  TEXT: System.out.println("Person 1: " + person1.address.city);
+
+[Block 451] UNCHANGED (note: Deep Copy)
+  TEXT: System.out.println("Person 2: " + person2.address.city);
+
+[Block 452] UNCHANGED (note: Deep Copy)
+  TEXT: class Address {
+
+[Block 453] UNCHANGED (note: Deep Copy)
+  TEXT: String city;
+
+[Block 454] UNCHANGED (note: Deep Copy)
+  TEXT: Address(String city) {
+
+[Block 455] UNCHANGED (note: Deep Copy)
+  TEXT: this.city = city;
+
+[Block 456] UNCHANGED (note: Deep Copy)
+  TEXT: // Copy constructor for deep copy
+
+[Block 457] UNCHANGED (note: Deep Copy)
+  TEXT: public Address(Address other) {
+
+[Block 458] UNCHANGED (note: Deep Copy)
+  TEXT: this.city = other.city;
+
+[Block 459] UNCHANGED (note: Deep Copy)
+  TEXT: class Person implements Cloneable {
+
+[Block 460] UNCHANGED (note: Deep Copy)
+  TEXT: String name;
+
+[Block 461] UNCHANGED (note: Deep Copy)
+  TEXT: Address address;
+
+[Block 462] UNCHANGED (note: Deep Copy)
+  TEXT: Person(String name, Address address) {
+
+[Block 463] UNCHANGED (note: Deep Copy)
+  TEXT: this.name = name;
+
+[Block 464] UNCHANGED (note: Deep Copy)
+  TEXT: this.address = address;
+
+[Block 465] UNCHANGED (note: Deep Copy)
+  TEXT: // Deep copy using the clone method
+
+[Block 466] UNCHANGED (note: Deep Copy)
+  TEXT: protected Object clone() throws CloneNotSupportedException {
+
+[Block 467] UNCHANGED (note: Deep Copy)
+  TEXT: Person cloned = (Person) super.clone();
+
+[Block 468] UNCHANGED (note: Deep Copy)
+  TEXT: // deep copy of address
+
+[Block 469] UNCHANGED (note: Deep Copy)
+  TEXT: cloned.address = new Address(this.address);
+
+[Block 470] UNCHANGED (note: Deep Copy)
+  TEXT: return cloned;
+
+[Block 471] UNCHANGED (note: Deep Copy)
+  TEXT: // Person 1: New York
+
+[Block 472] UNCHANGED (note: Deep Copy)
+  TEXT: // Person 2: New York
+
+[Block 473] UNCHANGED (note: Deep Copy)
+  TEXT: // Set Person 2 Address: Los Angeles
+
+[Block 474] UNCHANGED (note: Deep Copy)
+  TEXT: // Person 1: New York
+
+[Block 475] UNCHANGED (note: Deep Copy)
+  TEXT: // Person 2: Los Angeles
+
+[Block 476] UNCHANGED (note: Shallow Copy)
+  TEXT: A shallow copy creates a new object instance and then copies the values of the fields from the original object to the new object.  However, if any of these fields are themselves objects (reference types), only the references to those inner objects are copied, not the inner objects themselves.  Consequently, both the original and the newly created object will point to the same inner objects in memory.  This means that while the main objects are distinct entities on the heap, any modifications made to the inner objects through one of the copies will be reflected in the other, as they share the same underlying inner object instances.
+
+[Block 477] UNCHANGED (note: Shallow Copy)
+  TEXT: Primitive Fields - that is primitive data types (int, float, etc.), the value is copied directly.
+
+[Block 478] UNCHANGED (note: Shallow Copy)
+  TEXT: Object References - for fields that are references to objects, only the reference is copied, not the actual object.  This means both the original and the copied objects will reference the same object in memory.
+
+[Block 479] UNCHANGED (note: Shallow Copy)
+  TEXT: Ex) In this code that when we pass the values from one object to the other, two different objects are created in the memory heap.
+
+[Block 480] UNCHANGED (note: Shallow Copy)
+  TEXT: Product product = new Product("Macbook Pro", 3000);Product copyOfProduct = new Product(product.getName(), product.getPrice());product.setName("Alienware");System.out.println("product: " + product.getName());System.out.println("copyOfProduct: " + copyOfProduct.getName());// product: Alienware// copyOfProduct: Macbook Pro
+
+[Block 481] UNCHANGED (note: Shallow Copy)
+  TEXT: Product product = new Product("Macbook Pro", 3000);
+
+[Block 482] UNCHANGED (note: Shallow Copy)
+  TEXT: Product copyOfProduct = new Product(product.getName(), product.getPrice());
+
+[Block 483] UNCHANGED (note: Shallow Copy)
+  TEXT: System.out.println("product: " + product.getName());
+
+[Block 484] UNCHANGED (note: Shallow Copy)
+  TEXT: System.out.println("copyOfProduct: " + copyOfProduct.getName());
+
+[Block 485] UNCHANGED (note: Shallow Copy)
+  TEXT: // product: Alienware
+
+[Block 486] UNCHANGED (note: Shallow Copy)
+  TEXT: // copyOfProduct: Macbook Pro
+
+[Block 487] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: To create a new instance (object) of a class in memory.
+
+[Block 488] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: To set the initial state and values of the newly created object.
+
+[Block 489] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Uses the new keyword followed by a constructor call.
+
+[Block 490] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Primarily involves the execution of a constructor.
+
+[Block 491] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Occurs before initialization. It's the act of creation.
+
+[Block 492] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Occurs immediately after instantiation. It's the setup.
+
+[Block 493] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: What happens
+
+[Block 494] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Memory is allocated on the Heap for the object.
+
+[Block 495] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Instance variables are assigned their initial values.
+
+[Block 496] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: A new object exists in memory, but its state might not be fully set.
+
+[Block 497] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: The object is in a valid and usable initial state.
+
+[Block 498] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Default Action
+
+[Block 499] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: JVM handles memory allocation.
+
+[Block 500] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Fields get default values if not explicitly initialized.
+
+[Block 501] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Choosing which constructor to call (if multiple exist).
+
+[Block 502] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Defining the logic within the constructor and initialization blocks.
+
+[Block 503] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Building the empty frame of a house.
+
+[Block 504] UNCHANGED (note: Instantiation vs Initialization)
+  TEXT: Furnishing and setting up the rooms in the newly built house.
+
+[Block 505] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Object initialization in Java is the crucial process of setting up a newly created object with its initial state, making it ready for use.  This phase occurs immediately after an object is instantiated using the new keyword followed by a constructor call.  The primary goal is to ensure the object is in a valid and consistent state from the outset.
+
+[Block 506] UNCHANGED (note: Creation - Instantiation)
+  TEXT: new - keyword which will always create a new object.
+
+[Block 507] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Enum - generates a series of elements.
+
+[Block 508] UNCHANGED (note: Creation - Instantiation)
+  TEXT: clone() - returns a copy of the existing instance.
+
+[Block 509] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Class.forName() - get the instance of this Class with the specified class name.
+
+[Block 510] UNCHANGED (note: Creation - Instantiation)
+  TEXT: ObjectInputStream - de-serializes primitive data and objects.
+
+[Block 511] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Dependency Injection - to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality.
+
+[Block 512] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Static Factory Methods - in the static factory method set the values.
+
+[Block 513] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Builder Pattern - always you to pick and choose what attributes to set.
+
+[Block 514] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Reflection - create an instance of a class at runtime without knowing its name at compile time.
+
+[Block 515] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Field Init:
+
+[Block 516] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Default Values - if a field isn't explicitly initialized, it receives a default value based on its data type (e.g., null for objects, 0 for numbers, false for booleans).
+
+[Block 517] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Direct Assignment - fields can be initialized directly at their declaration.
+
+[Block 518] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Constructor Parameters - constructors often take parameters to customize the initial values of the object's fields.
+
+[Block 519] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Ex) Creating a new point object in memory.
+
+[Block 520] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Point originOne = new Point(23, 94);
+
+[Block 521] UNCHANGED (note: Creation - Instantiation)
+  TEXT: Point originOne = new Point(23, 94);
+
+[Block 522] UNCHANGED (note: Creation - Initialization)
+  TEXT: Every object must undergo initialization before it can be utilized.  Object instantiation is the specific process through which an instance of a class is created in memory.  This instantiation is achieved by using the new keyword, which is always followed by a call to one of the class's constructors.  The constructor is responsible for setting up the initial state of the newly created object.
+
+[Block 523] UNCHANGED (note: Creation - Initialization)
+  TEXT: Reflection - create an instance of a class at runtime without knowing its name at compile time.
+
+[Block 524] UNCHANGED (note: Creation - Initialization)
+  TEXT: Constructor - put the values to be update in the constructor(s).
+
+[Block 525] UNCHANGED (note: Creation - Initialization)
+  TEXT: Builder Pattern - always you to pick and choose what attributes to set.
+
+[Block 526] UNCHANGED (note: Creation - Initialization)
+  TEXT: Setter Methods - can set the value of an object’s attributes after the object has been created.
+
+[Block 527] UNCHANGED (note: Creation - Initialization)
+  TEXT: Initialization Blocks - blocks of code that are executed when an object is created and can be static or instance.
+
+[Block 528] UNCHANGED (note: Creation - Initialization)
+  TEXT: Static Factory Methods - in the static factory method set the values.
+
+[Block 529] UNCHANGED (note: Creation - Initialization)
+  TEXT: Ex) The new is the keyword used to create a new instance of the class.  ClassName() calls the constructor of the class to initialize the newly created object.
+
+[Block 530] UNCHANGED (note: Creation - Initialization)
+  TEXT: ClassName objectName = new ClassName();
+
+[Block 531] UNCHANGED (note: Creation - Initialization)
+  TEXT: ClassName objectName = new ClassName();
+
+[Block 532] UNCHANGED (note: Creation - Declaration)
+  TEXT: Object declaration in Java involves the creation of a reference variable, which is intended to point to an instance of a particular class.  At the point of declaration, this reference variable does not yet refer to any actual object in memory; it is simply a placeholder capable of holding a memory address of an object of its declared type.  When such a reference variable is declared as a field within a class, it is automatically initialized to null, indicating that it doesn't currently point to any object.
+
+[Block 533] UNCHANGED (note: Creation - Declaration)
+  TEXT: Ex) Declares a reference variable named myCar of type Car.  However, myCar doesn't refer to any specific Car object.
+
+[Block 534] UNCHANGED (note: Creation - Declaration)
+  TEXT: Car myCar;
+
+[Block 535] UNCHANGED (note: Creation - Declaration)
+  TEXT: Car myCar;
+
+[Block 536] UNCHANGED (note: Lazy Initialization)
+  TEXT: Lazy initialization is a strategy where the creation of a field's instance is postponed until the first time its value is actually required.  This deliberate delay in object instantiation or process execution helps minimize memory consumption by avoiding the allocation of resources for objects that might never be used.  The fundamental principle behind this pattern is the potential to bypass the initialization overhead altogether if the object is never accessed.  Primarily employed as an optimization technique to improve performance and reduce startup time.  Lazy initialization also serves as a mechanism to resolve complex circular dependencies that can arise during object creation.
+
+[Block 537] UNCHANGED (note: Lazy Initialization)
+  TEXT: Ex) Lazy when myInit() is called after the myClass object creation.
+
+[Block 538] UNCHANGED (note: Lazy Initialization)
+  TEXT: public myClass(){    Frame myLazyFrame = null;        public void myInit(){         myLazyFrame = new Frame();    }}
+
+[Block 539] UNCHANGED (note: Lazy Initialization)
+  TEXT: public myClass(){
+
+[Block 540] UNCHANGED (note: Lazy Initialization)
+  TEXT: Frame myLazyFrame = null;
+
+[Block 541] UNCHANGED (note: Lazy Initialization)
+  TEXT: public void myInit(){
+
+[Block 542] UNCHANGED (note: Lazy Initialization)
+  TEXT: myLazyFrame = new Frame();
+
+[Block 543] UNCHANGED (note: Shallow Comparison)
+  TEXT: A shallow comparison, exemplified by the default equals() method in Java's java.lang.Object class, performs a reference equality check.  It evaluates whether two object references, such as x and y, point to the identical object instance in memory by assessing the condition x == y.  This behavior arises because the Object class itself does not contain any data members that define an object's state.  As a result, the default equals() implementation focuses exclusively on the objects' identity rather than their content.  Consequently, even if two distinct objects possess the same values for all their fields, a shallow comparison of these objects will yield false.
+
+[Block 544] UNCHANGED (note: Shallow Comparison)
+  TEXT: Ex) Even though dog1 and dog2 have the same "Buddy" name and "Golden Retriever" breed, they are distinct objects residing at different memory locations. Therefore, the shallow comparison using == will evaluate to false.
+
+[Block 545] UNCHANGED (note: Shallow Comparison)
+  TEXT: public class Dog {    String name;    String breed;    public Dog(String name, String breed) {        this.name = name;        this.breed = breed;    }    public static void main(String[] args) {        Dog dog1 = new Dog("Buddy", "Golden Retriever");        Dog dog2 = new Dog("Buddy", "Golden Retriever");
+
+[Block 546] UNCHANGED (note: Shallow Comparison)
+  TEXT: public class Dog {
+
+[Block 547] UNCHANGED (note: Shallow Comparison)
+  TEXT: String name;
+
+[Block 548] UNCHANGED (note: Shallow Comparison)
+  TEXT: String breed;
+
+[Block 549] UNCHANGED (note: Shallow Comparison)
+  TEXT: public Dog(String name, String breed) {
+
+[Block 550] UNCHANGED (note: Shallow Comparison)
+  TEXT: this.name = name;
+
+[Block 551] UNCHANGED (note: Shallow Comparison)
+  TEXT: this.breed = breed;
+
+[Block 552] UNCHANGED (note: Shallow Comparison)
+  TEXT: public static void main(String[] args) {
+
+[Block 553] UNCHANGED (note: Shallow Comparison)
+  TEXT: Dog dog1 = new Dog("Buddy", "Golden Retriever");
+
+[Block 554] UNCHANGED (note: Shallow Comparison)
+  TEXT: Dog dog2 = new Dog("Buddy", "Golden Retriever");
+
+[Block 555] UNCHANGED (note: Instance)
+  TEXT: An object instance is simply a specific, concrete realization of a class.  Think of a class as a blueprint for creating objects.  The blueprint defines the characteristics (fields) and behaviors (methods) that all objects of that class will possess.  An object instance is when you actually use that blueprint to create a tangible entity in memory.
+
+[Block 556] UNCHANGED (note: Instance)
+  TEXT: Uniqueness - each object instance is a distinct entity in memory.  Even if two instances of the same class have the same values for all their fields, they are still separate objects.
+
+[Block 557] UNCHANGED (note: Instance)
+  TEXT: State - each object instance has its own unique state, determined by the current values of its fields. myCar has a red color, while anotherCar has a blue color.
+
+[Block 558] UNCHANGED (note: Instance)
+  TEXT: Behavior - all object instances of a class share the same methods defined in the class.  However, when you call a method on a specific instance, the method operates on that instance's unique state.  For example, calling accelerate() on myCar will affect the speed of that specific car object.
+
+[Block 559] UNCHANGED (note: Instance)
+  TEXT: Creation - object instances are created using the new keyword followed by a constructor call of the class.
+
+[Block 560] UNCHANGED (note: Instance)
+  TEXT: Reference - in Java, you typically interact with objects through reference variables (like myCar and anotherCar).  These variables hold the memory address of the actual object instance in the Heap.
+
+[Block 561] UNCHANGED (note: Domain Object)
+  TEXT: ﻿Java Domain Objects are fundamental to modeling a business or problem domain within an application.  These objects serve as representations of real-world entities or core concepts, focusing on the essential data and behaviors associated with them.  For instance, a Customer object would hold customer-related data like name and address, alongside methods for relevant actions.  The key is that domain objects emphasize the "what" and "why" of the business, often as Plain Old Java Objects (POJO) without framework-specific dependencies.  Residing in the domain or model layer of an application's architecture, they encapsulate business logic and data, leading to improved understanding, reduced complexity, enhanced maintainability and reusability, and better testability.  Ultimately, domain objects form the core of an application's business logic, providing a clear and organized software representation of the key entities driving its purpose.
+
+[Block 562] UNCHANGED (note: Domain Object)
+  TEXT: Ex) An e-commerce application, domain objects might include Product, Order, Customer, etc.
+
+[Block 563] UNCHANGED (note: Domain Object)
+  TEXT: public class Product{    public int Id { get; set; }    public string Name { get; set; }    public decimal Price { get; set; }    // Other domain-specific properties and methods}
+
+[Block 564] UNCHANGED (note: Domain Object)
+  TEXT: public class Product{
+
+[Block 565] UNCHANGED (note: Domain Object)
+  TEXT: public int Id { get; set; }
+
+[Block 566] UNCHANGED (note: Domain Object)
+  TEXT: public string Name { get; set; }
+
+[Block 567] UNCHANGED (note: Domain Object)
+  TEXT: public decimal Price { get; set; }
+
+[Block 568] UNCHANGED (note: Domain Object)
+  TEXT: // Other domain-specific properties and methods
+
+======================================================================
+Summary: 504 unchanged, 64 changed, 568 total blocks
+
+*** PARTIAL CHANGE. 64/568 blocks were updated. Check the UNCHANGED blocks above for patterns. ***

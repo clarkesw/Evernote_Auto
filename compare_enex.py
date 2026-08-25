@@ -3,6 +3,7 @@ import os
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
+# python compare_enex.py Objects.enex ai_notes\Objects.enex
 def extract_text_blocks(enex_path):
     """
     Extracts text content from each <content> tag in an .enex file,
