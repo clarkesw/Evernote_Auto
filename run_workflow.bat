@@ -101,6 +101,7 @@ if exist "%OUTPUT_DIR%\%NOTE_BOUNDARIES%" (
 )
 
 del /f /q "%OUTPUT_DIR%\gemini-code-*.json" >nul 2>&1
+del "*.enex"
 echo   - Flushed Gemini output payload from output directory.
 
 echo =======================================================

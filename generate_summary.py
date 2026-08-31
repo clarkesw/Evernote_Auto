@@ -154,7 +154,7 @@ def main():
             note_title = f"{source_basename} - Key Topics Summary"
             enex_output = build_summary_enex(note_title, topics)
 
-            final_output_dir = "output"
+            final_output_dir = "output/summary"
             if not os.path.exists(final_output_dir):
                 os.makedirs(final_output_dir)
 
